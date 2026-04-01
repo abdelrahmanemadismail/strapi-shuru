@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_layout_navigation_menus",
+  "info": {
+    "displayName": "Navigation Menu",
+    "description": "Main navigation menu with primary and secondary links",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "primaryMenuItems": {
+      "type": "component",
+      "component": "layout.navigation-item",
+      "repeatable": true,
+      "min": 0,
+      "max": 20
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_home_values",
+  "info": {
+    "displayName": "Value Proposition",
+    "description": "Why us section",
+    "icon": "star"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "introText": {
+      "type": "text"
+    },
+    "points": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.value-point"
+    },
+    "ctaText": {
+      "type": "string"
+    },
+    "ctaLink": {
+      "type": "string"
+    }
+  }
+}

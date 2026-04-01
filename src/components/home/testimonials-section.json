@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_home_testimonials_sections",
+  "info": {
+    "displayName": "Testimonials Section",
+    "description": "Configuration for the testimonials section",
+    "icon": "quote"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "introText": {
+      "type": "text"
+    },
+    "showSection": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

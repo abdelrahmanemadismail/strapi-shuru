@@ -3,24 +3,31 @@
   "info": {
     "name": "Seo",
     "icon": "allergies",
-    "displayName": "Seo",
-    "description": ""
+    "displayName": "SEO Metadata",
+    "description": "SEO metadata component for pages and articles"
   },
   "options": {},
   "attributes": {
-    "metaTitle": {
+    "meta_title": {
       "type": "string",
-      "required": true
+      "maxLength": 60,
+      "required": false
     },
-    "metaDescription": {
+    "meta_description": {
       "type": "text",
-      "required": true
+      "maxLength": 160,
+      "required": false
     },
-    "shareImage": {
+    "meta_keywords": {
+      "type": "string",
+      "required": false
+    },
+    "og_image": {
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": ["images"],
+      "allowedMimeTypes": ["image/jpeg", "image/jpg"]
     }
   }
 }

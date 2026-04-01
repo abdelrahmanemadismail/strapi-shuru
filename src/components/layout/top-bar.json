@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_layout_top_bars",
+  "info": {
+    "displayName": "Top Bar",
+    "icon": "bullhorn"
+  },
+  "options": {},
+  "attributes": {
+    "isVisible": {
+      "type": "boolean",
+      "default": true
+    },
+    "message": {
+      "type": "string",
+      "required": true
+    },
+    "linkText": {
+      "type": "string"
+    },
+    "linkUrl": {
+      "type": "string"
+    }
+  }
+}

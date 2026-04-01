@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_home_overviews",
+  "info": {
+    "displayName": "Overview",
+    "description": "Overview of solutions section",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "introText": {
+      "type": "text"
+    },
+    "cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.overview-card"
+    },
+    "ctaText": {
+      "type": "string"
+    },
+    "ctaLink": {
+      "type": "string"
+    }
+  }
+}

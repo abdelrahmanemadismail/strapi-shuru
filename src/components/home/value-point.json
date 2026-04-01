@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_home_value_points",
+  "info": {
+    "displayName": "Value Point",
+    "description": "Item in the Why Us / Value section",
+    "icon": "check"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "iconName": {
+      "type": "string"
+    }
+  }
+}
