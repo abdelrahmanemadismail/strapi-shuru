@@ -157,6 +157,7 @@ async function seedData() {
     }
 
     console.log('\n✅ Seeding Home & Testimonials completed successfully!');
+    await new Promise(resolve => setTimeout(resolve, 2000));
   } catch (error) {
     console.error('❌ Could not import seed data', error);
   } finally {

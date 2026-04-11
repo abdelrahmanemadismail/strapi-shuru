@@ -232,6 +232,8 @@ async function seedData() {
       }
     }
     console.log('\n✅ Seeding pages completed successfully!');
+    // Allow pending queries to finish before destroying the app
+    await new Promise(resolve => setTimeout(resolve, 2000));
   } catch (error) {
     console.log('❌ Could not import seed data', error);
   } finally {

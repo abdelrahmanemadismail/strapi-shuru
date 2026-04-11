@@ -120,6 +120,7 @@ async function seedHeaderFooter() {
     }
 
     console.log('\n✅ Seeding Header & Footer completed successfully!');
+    await new Promise(resolve => setTimeout(resolve, 2000));
   } catch (error) {
     console.error('❌ Could not import seed data', error);
   } finally {
