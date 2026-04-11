@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_challenges_sections",
+  "info": {
+    "displayName": "Challenges Section",
+    "description": "To handle the Pain Points on the Solutions Page."
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "introText": {
+      "type": "text"
+    },
+    "challenges": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.challenge-card"
+    }
+  }
+}

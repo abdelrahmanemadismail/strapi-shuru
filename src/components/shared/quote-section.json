@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_quote_sections",
+  "info": {
+    "displayName": "Quote Section",
+    "description": "A standalone quote highlight on the Methodology Page."
+  },
+  "options": {},
+  "attributes": {
+    "quoteText": {
+      "type": "text",
+      "required": true
+    },
+    "author": {
+      "type": "string"
+    }
+  }
+}

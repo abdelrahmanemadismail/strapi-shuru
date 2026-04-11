@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_challenge_cards",
+  "info": {
+    "displayName": "Challenge Card"
+  },
+  "options": {},
+  "attributes": {
+    "pain": {
+      "type": "string"
+    },
+    "intervention": {
+      "type": "text"
+    },
+    "result": {
+      "type": "string"
+    }
+  }
+}

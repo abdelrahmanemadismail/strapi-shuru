@@ -222,6 +222,31 @@ export interface LayoutTopBar extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedChallengeCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_challenge_cards';
+  info: {
+    displayName: 'Challenge Card';
+  };
+  attributes: {
+    intervention: Schema.Attribute.Text;
+    pain: Schema.Attribute.String;
+    result: Schema.Attribute.String;
+  };
+}
+
+export interface SharedChallengesSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_challenges_sections';
+  info: {
+    description: 'To handle the Pain Points on the Solutions Page.';
+    displayName: 'Challenges Section';
+  };
+  attributes: {
+    challenges: Schema.Attribute.Component<'shared.challenge-card', true>;
+    introText: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -242,6 +267,18 @@ export interface SharedQuote extends Struct.ComponentSchema {
   attributes: {
     body: Schema.Attribute.Text;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedQuoteSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_quote_sections';
+  info: {
+    description: 'A standalone quote highlight on the Methodology Page.';
+    displayName: 'Quote Section';
+  };
+  attributes: {
+    author: Schema.Attribute.String;
+    quoteText: Schema.Attribute.Text & Schema.Attribute.Required;
   };
 }
 
@@ -291,6 +328,31 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTimelineSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_timeline_sections';
+  info: {
+    description: 'To handle the Linear Process/Timeline on the Methodology Page.';
+    displayName: 'Timeline Section';
+  };
+  attributes: {
+    steps: Schema.Attribute.Component<'shared.timeline-step', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedTimelineStep extends Struct.ComponentSchema {
+  collectionName: 'components_shared_timeline_steps';
+  info: {
+    description: '';
+    displayName: 'Timeline Step';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    icon: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -307,11 +369,16 @@ declare module '@strapi/strapi' {
       'layout.navigation-sub-item': LayoutNavigationSubItem;
       'layout.social-link': LayoutSocialLink;
       'layout.top-bar': LayoutTopBar;
+      'shared.challenge-card': SharedChallengeCard;
+      'shared.challenges-section': SharedChallengesSection;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
+      'shared.quote-section': SharedQuoteSection;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.timeline-section': SharedTimelineSection;
+      'shared.timeline-step': SharedTimelineStep;
     }
   }
 }
