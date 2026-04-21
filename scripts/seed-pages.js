@@ -113,10 +113,10 @@ const pagesDataGrouped = {
         title: "المخرجات المتوقعة مع شروع",
         introText: "نركز على النتائج الفعلية والمستدامة للمنظمات.",
         cards: [
-          { title: "نموذج تنفيذ واضح – Execution Blueprint", description: "خارطة طريق لكيفية عمل المنظمة" },
-          { title: "آلية قرار قابلة للتكرار – Repeatable Decision System", description: "نظام عمل لا يتأثر بتغير الأشخاص" },
-          { title: "حوكمة رشيقة – Agile Governance", description: "إجراءات تدعم سرعة التنفيذ ولا تعيقه" },
-          { title: "قياس أثر حقيقي – Real Impact Measurement", description: "لغة أرقام واضحة تفهمها القيادة العليا" }
+          { title: "نموذج تنفيذ واضح – Execution Blueprint", description: "خارطة طريق لكيفية عمل المنظمة", iconName: "Map" },
+          { title: "آلية قرار قابلة للتكرار – Repeatable Decision System", description: "نظام عمل لا يتأثر بتغير الأشخاص", iconName: "Repeat" },
+          { title: "حوكمة رشيقة – Agile Governance", description: "إجراءات تدعم سرعة التنفيذ ولا تعيقه", iconName: "Zap" },
+          { title: "قياس أثر حقيقي – Real Impact Measurement", description: "لغة أرقام واضحة تفهمها القيادة العليا", iconName: "BarChart" }
         ]
       },
       {
@@ -132,10 +132,10 @@ const pagesDataGrouped = {
         title: "Expected Outputs with Shuru",
         introText: "We focus on actual and sustainable results for organizations.",
         cards: [
-          { title: "Execution Blueprint", description: "A roadmap for how the organization operates" },
-          { title: "Repeatable Decision System", description: "A work system that isn't affected by personnel changes" },
-          { title: "Agile Governance", description: "Procedures that support execution speed, not hinder it" },
-          { title: "Real Impact Measurement", description: "Clear numerical language understood by top management" }
+          { title: "Execution Blueprint", description: "A roadmap for how the organization operates", iconName: "Map" },
+          { title: "Repeatable Decision System", description: "A work system that isn't affected by personnel changes", iconName: "Repeat" },
+          { title: "Agile Governance", description: "Procedures that support execution speed, not hinder it", iconName: "Zap" },
+          { title: "Real Impact Measurement", description: "Clear numerical language understood by top management", iconName: "BarChart" }
         ]
       },
       {
@@ -173,6 +173,130 @@ const pagesDataGrouped = {
         __component: "home.testimonials-section",
         title: "What our clients say?",
         showSection: true
+      }
+    ] }
+  },
+  "about-us": {
+    ar: { title: "من نحن", slug: "about-us", locale: "ar", blocks: [
+      {
+        __component: "home.hero",
+        title: "من نحن",
+        subtitle: "نحن في شروع نؤمن بأن التنفيذ هو الفاصل بين الاستراتيجية المكتوبة والواقع الملموس. لم نأتِ لنضيف إجراءات جديدة، بل لنعيد تعريف كيفية اتخاذ القرار التنفيذي.",
+        primaryCtaText: "اكتشف منهجيتنا",
+        primaryCtaLink: "/methodology",
+        secondaryCtaText: "تواصل معنا",
+        secondaryCtaLink: "/contact"
+      },
+      {
+        __component: "home.value",
+        title: "قيم شروع الأساسية",
+        introText: "نؤمن بالعمل وفقًا لأسس توجه كل قرار نتخذه مع عملائنا.",
+        points: [
+          { title: "الأثر الملموس", description: "نركز على النتائج الفعلية التي تحدث تغييراً حقيقياً." },
+          { title: "الشفافية والوضوح", description: "نتخذ قرارات مبنية على معطيات وواقع، لا على افتراضات." },
+          { title: "تمكين الفريق", description: "ننقل القدرات لفرقك لتستمر في النجاح بدون الحاجة الدائمة لنا." }
+        ]
+      },
+      {
+        __component: "home.cta-footer",
+        headline: "هل مستعد لتغيير مسار التنفيذ؟",
+        primaryButtonText: "احجز جلسة استكشافية",
+        primaryButtonLink: "/consultation"
+      }
+    ] },
+    en: { title: "About Us", slug: "about-us", locale: "en", blocks: [
+      {
+        __component: "home.hero",
+        title: "About Us",
+        subtitle: "At Shuru, we believe execution is the deciding factor between a written strategy and a tangible reality. We didn't come to add new procedures, but to redefine how executive decisions are made.",
+        primaryCtaText: "Discover Our Methodology",
+        primaryCtaLink: "/methodology",
+        secondaryCtaText: "Contact Us",
+        secondaryCtaLink: "/contact"
+      },
+      {
+        __component: "home.value",
+        title: "Shuru Core Values",
+        introText: "We believe in working according to principles that guide every decision we make with our clients.",
+        points: [
+          { title: "Tangible Impact", description: "We focus on actual results that make a real difference." },
+          { title: "Transparency & Clarity", description: "We make decisions based on data and reality, not assumptions." },
+          { title: "Team Empowerment", description: "We transfer capabilities to your teams to continue succeeding without the constant need for us." }
+        ]
+      },
+      {
+        __component: "home.cta-footer",
+        headline: "Ready to change your execution path?",
+        primaryButtonText: "Book a discovery session",
+        primaryButtonLink: "/consultation"
+      }
+    ] }
+  },
+  "case-studies": {
+    ar: { title: "دراسات الحالة", slug: "case-studies", locale: "ar", blocks: [
+      {
+        __component: "home.hero",
+        title: "قصص نجاح واقعية",
+        subtitle: "تعرف على كيفية تحويلنا للتحديات الاستراتيجية إلى إنجازات ملموسة عبر منهجية شروع.",
+        primaryCtaText: "احجز جلسة الآن",
+        primaryCtaLink: "/consultation",
+        secondaryCtaText: "تصفح المخرجات",
+        secondaryCtaLink: "/outputs"
+      },
+      {
+        __component: "home.overview",
+        title: "دراسات حالة بارزة",
+        introText: "أمثلة حقيقية لشراكاتنا الناجحة مع مختلف المنظمات.",
+        cards: [
+          { title: "تحول رقمي لجهة حكومية", description: "إعادة هيكلة إجراءات العمل وتسريع اتخاذ القرار بنسبة 50%." },
+          { title: "رفع الكفاءة التشغيلية لمؤسسة رائدة", description: "تقليل الهدر وتحسين تخصيص الموارد وزيادة الإنتاجية بنسبة 40%." },
+          { title: "حوكمة المشاريع الكبرى", description: "تأسيس إطار عمل لمتابعة تقدم المبادرات بدقة عالية وبدون تأخير." }
+        ]
+      },
+      {
+        __component: "home.testimonials-section",
+        title: "رأي شركاء النجاح",
+        introText: "ماذا يقول عملاؤنا عن الأثر الذي حققناه معهم.",
+        showSection: true
+      },
+      {
+        __component: "home.cta-footer",
+        headline: "تطمح لتكون قصة النجاح القادمة؟",
+        primaryButtonText: "تواصل معنا لتحقيق أهدافك",
+        primaryButtonLink: "/contact"
+      }
+    ] },
+    en: { title: "Case Studies", slug: "case-studies", locale: "en", blocks: [
+      {
+        __component: "home.hero",
+        title: "Real Success Stories",
+        subtitle: "Discover how we transformed strategic challenges into tangible achievements through the Shuru methodology.",
+        primaryCtaText: "Book a session now",
+        primaryCtaLink: "/consultation",
+        secondaryCtaText: "Browse Outputs",
+        secondaryCtaLink: "/outputs"
+      },
+      {
+        __component: "home.overview",
+        title: "Featured Case Studies",
+        introText: "Real examples of our successful partnerships with various organizations.",
+        cards: [
+          { title: "Digital Transformation for a Government Entity", description: "Restructuring business processes and accelerating decision-making by 50%." },
+          { title: "Increasing Operational Efficiency for a Leading Org", description: "Reducing waste, improving resource allocation, and increasing productivity by 40%." },
+          { title: "Mega Projects Governance", description: "Establishing a framework to track initiative progress with high accuracy and without delay." }
+        ]
+      },
+      {
+        __component: "home.testimonials-section",
+        title: "Success Partners' Feedback",
+        introText: "What our clients say about the impact we achieved with them.",
+        showSection: true
+      },
+      {
+        __component: "home.cta-footer",
+        headline: "Aspire to be the next success story?",
+        primaryButtonText: "Contact us to achieve your goals",
+        primaryButtonLink: "/contact"
       }
     ] }
   }

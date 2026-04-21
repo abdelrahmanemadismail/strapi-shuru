@@ -32,7 +32,14 @@
         "home.overview",
         "home.value",
         "home.testimonials-section",
-        "home.cta-footer"
+        "home.cta-footer",
+        "shared.challenges-section",
+        "shared.timeline-section",
+        "shared.quote-section",
+        "shared.media",
+        "shared.quote",
+        "shared.rich-text",
+        "shared.slider"
       ],
       "pluginOptions": {
         "i18n": {

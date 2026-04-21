@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "majlises",
+  "info": {
+    "singularName": "majlis",
+    "pluralName": "majlises",
+    "displayName": "Majlis",
+    "description": "Majlis and interviews"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "cover_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "content": {
+      "type": "richtext",
+      "required": false
+    },
+    "majlis_date": {
+      "type": "date",
+      "required": false
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "guests": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.guest"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

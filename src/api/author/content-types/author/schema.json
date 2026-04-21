@@ -5,24 +5,76 @@
     "singularName": "author",
     "pluralName": "authors",
     "displayName": "Author",
-    "description": "Create authors for your content"
+    "description": "Blog post authors"
   },
   "options": {
     "draftAndPublish": false
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "maxLength": 100
+    },
+    "phone_number": {
+      "type": "string",
+      "required": false,
+      "maxLength": 20
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
     },
     "avatar": {
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images", "files", "videos"]
+      "allowedTypes": [
+        "images"
+      ]
     },
-    "email": {
-      "type": "string"
+    "organization": {
+      "type": "string",
+      "required": false,
+      "maxLength": 100
+    },
+    "jobTitle": {
+      "type": "string",
+      "required": false,
+      "maxLength": 100
+    },
+    "linkedin_url": {
+      "type": "string",
+      "required": false
+    },
+    "bio": {
+      "type": "text",
+      "required": false
+    },
+    "previousPublications": {
+      "type": "text",
+      "required": false,
+      "maxLength": 1000
+    },
+    "websiteUrl": {
+      "type": "string",
+      "required": false
+    },
+    "socialMediaLinks": {
+      "type": "text",
+      "required": false,
+      "maxLength": 500
+    },
+    "additionalNotes": {
+      "type": "text",
+      "required": false,
+      "maxLength": 1000
     },
     "articles": {
       "type": "relation",

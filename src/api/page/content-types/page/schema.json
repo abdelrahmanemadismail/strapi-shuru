@@ -37,13 +37,18 @@
     "blocks": {
       "type": "dynamiczone",
       "components": [
+        "home.hero",
+        "home.overview",
+        "home.value",
+        "home.testimonials-section",
+        "home.cta-footer",
         "shared.challenges-section",
         "shared.timeline-section",
         "shared.quote-section",
-        "home.hero",
-        "home.overview",
-        "home.cta-footer",
-        "home.testimonials-section"
+        "shared.media",
+        "shared.quote",
+        "shared.rich-text",
+        "shared.slider"
       ],
       "pluginOptions": {
         "i18n": {

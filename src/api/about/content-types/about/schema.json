@@ -17,7 +17,20 @@
     },
     "blocks": {
       "type": "dynamiczone",
-      "components": ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]
+      "components": [
+        "home.hero",
+        "home.overview",
+        "home.value",
+        "home.testimonials-section",
+        "home.cta-footer",
+        "shared.challenges-section",
+        "shared.timeline-section",
+        "shared.quote-section",
+        "shared.media",
+        "shared.quote",
+        "shared.rich-text",
+        "shared.slider"
+      ]
     }
   }
 }

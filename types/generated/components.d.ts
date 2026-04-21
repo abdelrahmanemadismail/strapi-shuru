@@ -247,6 +247,19 @@ export interface SharedChallengesSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedGuest extends Struct.ComponentSchema {
+  collectionName: 'components_content_guests';
+  info: {
+    description: 'Guest information for meetings';
+    displayName: 'Guest';
+    icon: 'user';
+  };
+  attributes: {
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -371,6 +384,7 @@ declare module '@strapi/strapi' {
       'layout.top-bar': LayoutTopBar;
       'shared.challenge-card': SharedChallengeCard;
       'shared.challenges-section': SharedChallengesSection;
+      'shared.guest': SharedGuest;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.quote-section': SharedQuoteSection;

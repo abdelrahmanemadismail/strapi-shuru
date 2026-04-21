@@ -10,24 +10,33 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "title": {
-      "type": "string"
-    },
-    "description": {
-      "type": "text",
-      "maxLength": 80
+      "type": "string",
+      "required": true,
+      "maxLength": 255
     },
     "slug": {
       "type": "uid",
-      "targetField": "title"
+      "targetField": "title",
+      "required": true
     },
-    "cover": {
+    "cover_image": {
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images", "files", "videos"]
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "enable_cover_image": {
+      "type": "boolean",
+      "default": false
     },
     "author": {
       "type": "relation",
@@ -35,15 +44,47 @@
       "target": "api::author.author",
       "inversedBy": "articles"
     },
-    "category": {
+    "categories": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::category.category",
       "inversedBy": "articles"
     },
     "blocks": {
       "type": "dynamiczone",
-      "components": ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]
+      "components": [
+        "home.hero",
+        "home.overview",
+        "home.value",
+        "home.testimonials-section",
+        "home.cta-footer",
+        "shared.challenges-section",
+        "shared.timeline-section",
+        "shared.quote-section",
+        "shared.media",
+        "shared.quote",
+        "shared.rich-text",
+        "shared.slider"
+      ]
+    },
+    "publish_date": {
+      "type": "datetime",
+      "required": false
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "magazine_issues": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::magazine-issue.magazine-issue",
+      "inversedBy": "articles"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
     }
   }
 }
