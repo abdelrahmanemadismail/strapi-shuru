@@ -49,6 +49,15 @@
       "target": "api::author.author",
       "inversedBy": "articles"
     },
+    "description": {
+      "type": "text",
+      "required": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "categories": {
       "type": "relation",
       "relation": "manyToMany",
