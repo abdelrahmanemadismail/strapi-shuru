@@ -97,6 +97,12 @@ async function syncData() {
         cleanData = cleanComponents(cleanData);
         cleanData.publishedAt = new Date().toISOString();
 
+        // FIX 1: Clean empty strings for unique fields.
+        // Postgres treats multiple "" as a duplicate unique violation.
+        if (cleanData.email === "") cleanData.email = undefined;
+        if (cleanData.name === "") cleanData.name = undefined;
+        if (cleanData.slug === "") cleanData.slug = undefined;
+
         for (const [key, value] of Object.entries(cleanData)) {
             if (!value) continue;
             if (typeof value === 'object' && value.url) {
@@ -119,7 +125,10 @@ async function syncData() {
         }
 
         const filterVal = cleanData[col.uniqueKey];
-        if (!filterVal && filterVal !== "") continue;
+        if (!filterVal && filterVal !== "") {
+            console.warn(`⚠️ Skipping item due to missing uniqueKey (${col.uniqueKey})`);
+            continue;
+        }
 
         let baseDocId;
         try {
@@ -145,8 +154,11 @@ async function syncData() {
                 baseDocId = newDoc.documentId;
             }
         } catch (e) {
-            console.error(`Failed resolving base document for ${filterVal}:`, e.message);
-            continue; // Skip if it totally fails
+            // FIX 2: Enhanced error logging to catch the REAL error before Postgres aborts.
+            console.error(`\n❌ DB Error creating base document for ${col.uniqueKey}: ${filterVal}`);
+            console.error(`Error details:`, e.details?.errors || e.message);
+            // By continuing here, you skip the broken record and move to the next one
+            continue;
         }
 
         const targetLocales = ['ar', 'en'];
@@ -173,7 +185,7 @@ async function syncData() {
                   });
                 }
             } catch(e) {
-                // If it fails across languages just log and move
+                console.error(`❌ DB Error updating locale ${targetLocale} for ${filterVal}:`, e.details?.errors || e.message);
             }
         }
       }
