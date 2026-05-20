@@ -15,12 +15,10 @@
       "type": "text"
     },
     "primaryCtaText": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "primaryCtaLink": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "secondaryCtaText": {
       "type": "string"

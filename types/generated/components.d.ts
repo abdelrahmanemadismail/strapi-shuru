@@ -26,7 +26,7 @@ export interface HomeHero extends Struct.ComponentSchema {
   attributes: {
     image: Schema.Attribute.Media<'images' | 'videos'>;
     primaryCtaLink: Schema.Attribute.String & Schema.Attribute.Required;
-    primaryCtaText: Schema.Attribute.String & Schema.Attribute.Required;
+    primaryCtaText: Schema.Attribute.String;
     secondaryCtaLink: Schema.Attribute.String;
     secondaryCtaText: Schema.Attribute.String;
     subtitle: Schema.Attribute.Text;

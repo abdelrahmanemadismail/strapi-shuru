@@ -299,6 +299,38 @@ const pagesDataGrouped = {
         primaryButtonLink: "/contact"
       }
     ] }
+  },
+  terms: {
+    ar: { title: "الشروط والأحكام", slug: "terms", locale: "ar", blocks: [
+      {
+        __component: "home.hero",
+        title: "الشروط والأحكام",
+        subtitle: "يرجى قراءة هذه الشروط بعناية قبل استخدام موقعنا وخدماتنا."
+      }
+    ] },
+    en: { title: "Terms and Conditions", slug: "terms", locale: "en", blocks: [
+      {
+        __component: "home.hero",
+        title: "Terms and Conditions",
+        subtitle: "Please read these terms carefully before using our website and services."
+      }
+    ] }
+  },
+  privacy: {
+    ar: { title: "سياسة الخصوصية", slug: "privacy", locale: "ar", blocks: [
+      {
+        __component: "home.hero",
+        title: "سياسة الخصوصية",
+        subtitle: "نحن نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية."
+      }
+    ] },
+    en: { title: "Privacy Policy", slug: "privacy", locale: "en", blocks: [
+      {
+        __component: "home.hero",
+        title: "Privacy Policy",
+        subtitle: "We respect your privacy and are committed to protecting your personal data."
+      }
+    ] }
   }
 };
 
