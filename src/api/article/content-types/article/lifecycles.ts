@@ -72,6 +72,7 @@ async function syncSharedFields(savedEntry: any) {
 
         const sibling: any = await strapi.db.query('api::article.article').findOne({
           where: { documentId, locale },
+          populate: { cover_image: true, author: true, categories: true, magazine_issues: true, seo: true },
         });
 
         if (!sibling) {
@@ -90,6 +91,28 @@ async function syncSharedFields(savedEntry: any) {
           });
           strapi.log.info(`[article lifecycle] ✅ Created ${locale} draft`);
         } else {
+          const siblingCatIds = (sibling.categories ?? []).map((c: any) => c.id).sort().join(',');
+          const newCatIds = [...catIds].sort().join(',');
+
+          const siblingMagIds = (sibling.magazine_issues ?? []).map((m: any) => m.id).sort().join(',');
+          const newMagIds = [...magIds].sort().join(',');
+
+          const hasDifferences =
+            sibling.slug !== sharedScalars.slug ||
+            !!sibling.enable_cover_image !== !!sharedScalars.enable_cover_image ||
+            sibling.publish_date !== sharedScalars.publish_date ||
+            !!sibling.is_featured !== !!sharedScalars.is_featured ||
+            (sibling.cover_image?.id ?? null) !== sharedScalars.cover_image ||
+            (sibling.author?.id ?? null) !== sharedScalars.author ||
+            JSON.stringify(sibling.seo ? stripMeta(sibling.seo) : null) !== JSON.stringify(sharedScalars.seo) ||
+            siblingCatIds !== newCatIds ||
+            siblingMagIds !== newMagIds;
+
+          if (!hasDifferences) {
+            strapi.log.info(`[article lifecycle] No changes needed for ${locale} (id:${sibling.id})`);
+            continue;
+          }
+
           await strapi.db.query('api::article.article').update({
             where: { id: sibling.id },
             data: {
