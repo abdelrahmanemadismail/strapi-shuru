@@ -306,6 +306,44 @@ const pagesDataGrouped = {
         __component: "home.hero",
         title: "الشروط والأحكام",
         subtitle: "يرجى قراءة هذه الشروط بعناية قبل استخدام موقعنا وخدماتنا."
+      },
+      {
+        __component: "shared.markdown-section",
+        content: `
+## 1. مقدمة
+مرحباً بك في موقع شروع. من خلال الوصول إلى موقعنا أو استخدام خدماتنا، فإنك توافق على الالتزام الصارم بهذه الشروط والأحكام. إذا كنت لا توافق على أي جزء من هذه الشروط، يرجى التوقف عن استخدام الموقع والخدمات فوراً.
+
+## 2. الخدمات المقدمة
+توفر "شروع" خدمات استشارية استراتيجية وحلول تنفيذية للمؤسسات. جميع الخدمات تخضع لعقود منفصلة يتم إبرامها مع العملاء. المعلومات المقدمة على هذا الموقع هي لأغراض إعلامية عامة ولا تعتبر نصيحة مهنية مُلزمة إلا في إطار تعاقد رسمي.
+
+## 3. حقوق الملكية الفكرية
+جميع المحتويات المتاحة على هذا الموقع (بما في ذلك وليس حصراً: النصوص، التصاميم، الرسومات، الشعارات، الصور، المقاطع الصوتية، والبرمجيات) هي ملكية حصرية لشركة "شروع" أو مُرخصة لها، وهي محمية بموجب قوانين حقوق النشر والملكية الفكرية المحلية والدولية. يُمنع منعاً باتاً نسخ، توزيع، إعادة إنتاج، أو استخدام أي من هذه المحتويات دون إذن كتابي مسبق.
+
+## 4. شروط الاستخدام المقبول
+بتصفحك لهذا الموقع، أنت توافق على:
+- استخدام الموقع لأغراض قانونية ومشروعة فقط.
+- عدم اتخاذ أي إجراء من شأنه إلحاق الضرر بالبنية التحتية للموقع أو تعطيل خدماته.
+- عدم محاولة الوصول غير المصرح به إلى أي جزء من الموقع أو الأنظمة المرتبطة به.
+- عدم استخدام الموقع لنشر أي محتوى مسيء، تشهيري، أو ينتهك حقوق الآخرين.
+
+## 5. إخلاء المسؤولية وتحديد المسؤولية
+رغم بذلنا كل جهد لضمان دقة وتحديث المعلومات على الموقع، يتم تقديم المحتوى "كما هو" دون أي ضمانات صريحة أو ضمنية.
+لا تتحمل "شروع" أي مسؤولية عن أي أضرار مباشرة، غير مباشرة، عرضية، أو تبعية تنشأ عن استخدامك أو عدم قدرتك على استخدام الموقع أو الاعتماد على المعلومات المقدمة فيه.
+
+## 6. روابط الأطراف الثالثة
+قد يحتوي موقعنا على روابط لمواقع إلكترونية تابعة لأطراف ثالثة. هذه الروابط توفر لراحتك فقط، ولا تعني مصادقتنا على المحتوى الموجود فيها. نحن غير مسؤولين عن ممارسات الخصوصية أو محتوى تلك المواقع المستقلة.
+
+## 7. التعديلات على الشروط
+نحتفظ بالحق الكامل في تحديث، تعديل، أو تغيير هذه الشروط والأحكام في أي وقت دون إشعار مسبق. يُعتبر استمرارك في استخدام الموقع بعد نشر أي تعديلات بمثابة قبول صريح لهذه التعديلات. يُرجى مراجعة هذه الصفحة بشكل دوري.
+
+## 8. القانون المطبق
+تخضع هذه الشروط والأحكام وتُفسر وفقاً للقوانين المعمول بها في المملكة العربية السعودية. أي نزاع ينشأ عن أو يتعلق باستخدام هذا الموقع يخضع للاختصاص الحصري للمحاكم السعودية.
+
+## 9. معلومات التواصل
+لأي استفسارات أو ملاحظات بشأن هذه الشروط والأحكام، يرجى التواصل معنا عبر:
+- **البريد الإلكتروني:** info@shuru.sa
+- **صفحة التواصل:** [/contact](/contact)
+        `
       }
     ] },
     en: { title: "Terms and Conditions", slug: "terms", locale: "en", blocks: [
@@ -313,6 +351,44 @@ const pagesDataGrouped = {
         __component: "home.hero",
         title: "Terms and Conditions",
         subtitle: "Please read these terms carefully before using our website and services."
+      },
+      {
+        __component: "shared.markdown-section",
+        content: `
+## 1. Introduction
+Welcome to Shuru. By accessing or using our website and services, you agree to be strictly bound by these Terms and Conditions. If you do not agree to any part of these terms, please stop using our website and services immediately.
+
+## 2. Services Provided
+Shuru provides strategic consulting services and executive solutions for organizations. All services are subject to separate contracts signed with clients. The information provided on this website is for general informational purposes and does not constitute binding professional advice unless specifically part of a formal contract.
+
+## 3. Intellectual Property Rights
+All content available on this website (including but not limited to: text, designs, graphics, logos, images, audio clips, and software) is the exclusive property of Shuru or its licensors, and is protected by local and international copyright and intellectual property laws. Copying, distributing, reproducing, or using any of this content without prior written permission is strictly prohibited.
+
+## 4. Acceptable Use
+By browsing this website, you agree to:
+- Use the website for lawful and legitimate purposes only.
+- Refrain from any action that could damage the website's infrastructure or disrupt its services.
+- Not attempt unauthorized access to any part of the website or connected systems.
+- Not use the website to publish any offensive, defamatory content, or content that violates the rights of others.
+
+## 5. Disclaimer and Limitation of Liability
+While we make every effort to ensure the accuracy and currency of information on the website, the content is provided "as is" without any express or implied warranties.
+Shuru bears no liability for any direct, indirect, incidental, or consequential damages arising from your use or inability to use the website or reliance on any information provided herein.
+
+## 6. Third-Party Links
+Our website may contain links to third-party websites. These links are provided for convenience only and do not signify our endorsement of their content. We are not responsible for the privacy practices or content of these independent sites.
+
+## 7. Modifications to Terms
+We reserve the absolute right to update, modify, or alter these Terms and Conditions at any time without prior notice. Your continued use of the website following the posting of any changes constitutes explicit acceptance of those changes. Please review this page periodically.
+
+## 8. Governing Law
+These Terms and Conditions shall be governed by and construed in accordance with the laws applicable in the Kingdom of Saudi Arabia. Any dispute arising out of or related to the use of this website shall be subject to the exclusive jurisdiction of the Saudi courts.
+
+## 9. Contact Information
+For any inquiries or feedback regarding these Terms and Conditions, please contact us at:
+- **Email:** info@shuru.sa
+- **Contact Page:** [/contact](/contact)
+        `
       }
     ] }
   },
@@ -322,6 +398,52 @@ const pagesDataGrouped = {
         __component: "home.hero",
         title: "سياسة الخصوصية",
         subtitle: "نحن نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية."
+      },
+      {
+        __component: "shared.markdown-section",
+        content: `
+## 1. التزامنا بالخصوصية
+في "شروع"، تعتبر خصوصيتك من أعلى أولوياتنا. نحن نلتزم بالشفافية الكاملة حول كيفية جمع بياناتك الشخصية واستخدامها وحمايتها عند زيارتك لموقعنا الإلكتروني أو الاستفادة من خدماتنا.
+
+## 2. المعلومات التي نجمعها
+نحن نقوم بجمع نوعين من المعلومات:
+- **المعلومات المقدمة طواعية:** وتشمل البيانات التي تدخلها عند ملء نماذج الاتصال، مثل الاسم، المسمى الوظيفي، اسم المؤسسة، البريد الإلكتروني، ورقم الهاتف، وتفاصيل استفسارك.
+- **معلومات الجمع التلقائي (البيانات التحليلية):** عند تصفحك للموقع، قد نقوم آلياً بجمع معلومات تقنية مثل عنوان بروتوكول الإنترنت (IP)، نوع المتصفح، نظام التشغيل، الصفحات التي قمت بزيارتها، والوقت المستغرق في الموقع، وذلك باستخدام ملفات تعريف الارتباط (Cookies).
+
+## 3. كيف نستخدم معلوماتك
+تُستخدم البيانات التي نجمعها للأغراض التالية:
+- للتواصل معك والرد على استفساراتك وطلبات الاستشارة.
+- لتقديم خدماتنا الاستشارية وتخصيصها لتلائم احتياجات مؤسستك.
+- لتحسين تجربة المستخدم وتطوير أداء الموقع الإلكتروني.
+- لإرسال النشرات الإخبارية، التحديثات، والمحتوى المهني الذي قد يهمك (يمكنك إلغاء الاشتراك في أي وقت).
+- للامتثال للمتطلبات القانونية والتنظيمية.
+
+## 4. كيف نشارك معلوماتك
+نحن نلتزم بعدم بيع، تأجير، أو تداول بياناتك الشخصية لأي أطراف ثالثة لأغراض تجارية. قد نشارك معلوماتك في الحالات المحدودة التالية:
+- **مزودي الخدمات:** مع شركائنا التقنيين الذين يساعدوننا في تشغيل الموقع (مثل خدمات استضافة السحابة وأنظمة إدارة البريد الإلكتروني)، بشرط التزامهم الصارم بسرية البيانات.
+- **المتطلبات القانونية:** إذا طُلب منا ذلك بموجب أحكام القانون أو استجابة لطلبات حكومية ورسمية، لحماية حقوق "شروع" القانونية لضمان سلامة وأمن المستخدمين.
+
+## 5. أمن البيانات وحمايتها
+نتخذ في "شروع" تدابير وإجراءات أمنية تقنية وتنظيمية متقدمة لحماية بياناتك من الوصول غير المصرح به، التعديل، الإفصاح، أو الإتلاف. وتُحفظ البيانات على خوادم آمنة تخضع لرقابة صارمة. ومع ذلك، يُرجى ملاحظة أنه لا توجد وسيلة نقل عبر الإنترنت آمنة بنسبة 100%.
+
+## 6. ملفات تعريف الارتباط (Cookies)
+نستخدم ملفات تعريف الارتباط لتحسين تجربة تصفحك وتحليل حركة الزيارات. يمكنك التحكم في إعدادات ملفات تعريف الارتباط من خلال متصفحك ورفضها إذا رغبت، رغم أن ذلك قد يؤثر على فعالية بعض ميزات الموقع.
+
+## 7. حقوقك المتعلقة ببياناتك
+بصفتك مستخدماً، يحق لك دائماً:
+- الوصول إلى بياناتك الشخصية التي نحتفظ بها ومعرفتها.
+- طلب تصحيح أي بيانات غير دقيقة أو تحديثها.
+- طلب حذف بياناتك الشخصية من سجلاتنا (حق النسيان) في ظروف معينة.
+- سحب موافقتك على تلقي المراسلات التسويقية.
+
+## 8. التعديلات على سياسة الخصوصية
+قد نقوم بتحديث هذه السياسة من حين لآخر لتعكس التغييرات في ممارساتنا أو لاعتبارات تنظيمية. سيتم نشر التحديثات على هذه الصفحة وتحديث تاريخ المراجعة. استخدامك المستمر للموقع يعني قبولك للسياسة المحدثة.
+
+## 9. تواصل معنا لمسائل الخصوصية
+إذا كان لديك أي سؤال، استفسار، أو مخاوف بشأن هذه السياسة أو طريقة تعاملنا مع بياناتك، يرجى مراسلتنا فوراً:
+- **البريد الإلكتروني:** privacy@shuru.sa
+- **الهاتف:** [يضاف رقم الهاتف إن وجد]
+        `
       }
     ] },
     en: { title: "Privacy Policy", slug: "privacy", locale: "en", blocks: [
@@ -329,6 +451,52 @@ const pagesDataGrouped = {
         __component: "home.hero",
         title: "Privacy Policy",
         subtitle: "We respect your privacy and are committed to protecting your personal data."
+      },
+      {
+        __component: "shared.markdown-section",
+        content: `
+## 1. Our Commitment to Privacy
+At Shuru, your privacy is a top priority. We are committed to complete transparency regarding how we collect, use, and protect your personal data when you visit our website or utilize our services.
+
+## 2. Information We Collect
+We collect two main types of information:
+- **Voluntarily Provided Information:** Data you input when filling out contact forms, such as your name, job title, company name, email, phone number, and inquiry details.
+- **Automatically Collected Information (Analytics Data):** While you browse our site, we may automatically collect technical info such as your IP address, browser type, operating system, pages visited, and time spent on the site using Cookies.
+
+## 3. How We Use Your Information
+The data we collect is utilized for the following purposes:
+- To communicate with you and respond to your inquiries and consultation requests.
+- To deliver and customize our consulting services to fit your organization's needs.
+- To analyze user experience and improve website performance.
+- To send newsletters, updates, and professional content that may interest you (you can opt-out at any time).
+- To comply with legal and regulatory requirements.
+
+## 4. How We Share Your Information
+We strictly promise not to sell, rent, or trade your personal data to any third parties for commercial purposes. We may share your information only in these limited cases:
+- **Service Providers:** With our technical partners who help us operate the site (like cloud hosting and email management systems), provided they agree to strict confidentiality.
+- **Legal Requirements:** If required by law or in response to official government requests, to protect Shuru's legal rights and ensure user safety.
+
+## 5. Data Security and Protection
+Shuru deploys advanced technical and organizational security measures to protect your data from unauthorized access, alteration, disclosure, or destruction. Data is stored on secure, strictly monitored servers. However, please note that no internet transmission method is 100% physically secure.
+
+## 6. Cookies
+We use cookies to improve your browsing experience and analyze web traffic. You can adjust your browser settings to decline cookies if you prefer, although doing so may impact the functionality of certain website features.
+
+## 7. Your Data Rights
+As a user, you consistently have the right to:
+- Access and know the personal data we hold about you.
+- Request corrections or updates to any inaccurate info.
+- Request the deletion of your personal data from our records in certain circumstances.
+- Withdraw consent for receiving marketing communications.
+
+## 8. Amendments to Privacy Policy
+We may update this policy occasionally to reflect changes in our practices or regulatory standards. Updates will be posted on this page along with a revised date. Your continued use of the website implies acceptance of the updated policy.
+
+## 9. Contact Us for Privacy Matters
+If you have any questions, concerns, or inquiries regarding this policy or how we handle your data, please contact us immediately:
+- **Email:** privacy@shuru.sa
+- **Phone:** [Add Phone Number if applicable]
+        `
       }
     ] }
   }
