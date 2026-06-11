@@ -35,5 +35,46 @@ export default {
         strapi.log.error('❌ Failed to add Arabic locale', error);
       }
     }
+
+    // Automatically bootstrap permissions for saved-insight content type
+    try {
+      const authenticatedRole = await strapi
+        .query('plugin::users-permissions.role')
+        .findOne({ where: { type: 'authenticated' } });
+
+      if (authenticatedRole) {
+        const actions = [
+          'api::saved-insight.saved-insight.find',
+          'api::saved-insight.saved-insight.findOne',
+          'api::saved-insight.saved-insight.create',
+          'api::saved-insight.saved-insight.update',
+          'api::saved-insight.saved-insight.delete',
+          'api::saved-insight.saved-insight.destroy',
+        ];
+
+        for (const action of actions) {
+          const existing = await strapi
+            .query('plugin::users-permissions.permission')
+            .findOne({
+              where: {
+                action,
+                role: authenticatedRole.id,
+              },
+            });
+
+          if (!existing) {
+            await strapi.query('plugin::users-permissions.permission').create({
+              data: {
+                action,
+                role: authenticatedRole.id,
+              },
+            });
+            strapi.log.info(`✅ Granted permission: ${action} to Authenticated role`);
+          }
+        }
+      }
+    } catch (error) {
+      strapi.log.error('❌ Failed to bootstrap saved-insight permissions', error);
+    }
   },
 };
