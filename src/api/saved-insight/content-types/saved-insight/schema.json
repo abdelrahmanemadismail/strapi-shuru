@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "saved_insights",
+  "info": {
+    "singularName": "saved-insight",
+    "pluralName": "saved-insights",
+    "displayName": "Saved Insight",
+    "description": "User saved/bookmarked insights"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "insightId": {
+      "type": "string",
+      "required": true
+    },
+    "insightType": {
+      "type": "enumeration",
+      "enum": [
+        "article",
+        "news-item",
+        "magazine-issue",
+        "majlis",
+        "podcast"
+      ],
+      "required": true
+    }
+  }
+}
