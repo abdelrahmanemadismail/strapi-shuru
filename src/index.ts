@@ -1,4 +1,5 @@
-// import type { Core } from '@strapi/strapi';
+import type { Core } from '@strapi/strapi';
+import providers from '../config/providers';
 
 export default {
   /**
@@ -16,42 +17,50 @@ export default {
    * This gives you an opportunity to set up your data model,
    * run jobs, or perform some special logic.
    */
-  async bootstrap({ strapi } /*: { strapi: Core.Strapi }*/) {
-    // Override LinkedIn provider configuration to use new OpenID Connect scopes and endpoint
+  async bootstrap({ strapi }: { strapi: Core.Strapi }) {
+    // Override providers dynamically based on config/providers.ts
     try {
       const registry = strapi.plugin('users-permissions').service('providers-registry');
-      const originalLinkedin = registry.get('linkedin');
 
-      if (originalLinkedin) {
-        registry.add('linkedin', {
-          ...originalLinkedin,
+      for (const [providerName, providerConfig] of Object.entries(providers)) {
+        if (!providerConfig.enabled) continue;
+
+        const originalProvider = registry.get(providerName);
+        if (!originalProvider) continue;
+
+        const oauth2 = (providerConfig as any).oauth2;
+        if (!oauth2) continue;
+
+        registry.add(providerName, {
+          ...originalProvider,
           grantConfig: {
-            ...originalLinkedin.grantConfig,
-            scope: ['openid', 'profile', 'email'],
+            ...originalProvider.grantConfig,
+            scope: oauth2.scope,
           },
           async authCallback({ accessToken }: { accessToken: string }) {
-            const response = await fetch('https://api.linkedin.com/v2/userinfo', {
+            const response = await fetch(oauth2.profileURL, {
               headers: {
                 Authorization: `Bearer ${accessToken}`,
               },
             });
 
             if (!response.ok) {
-              throw new Error('Failed to fetch user info from LinkedIn');
+              throw new Error(`Failed to fetch user info from ${providerName}`);
             }
 
             const body = await response.json() as any;
+            const mapping = oauth2.fieldMapping || {};
 
             return {
-              username: body.name || body.given_name || `${body.given_name} ${body.family_name}` || body.email?.split('@')[0],
-              email: body.email,
+              username: body[mapping.username] || body[mapping.firstName] || body.name || body.email?.split('@')[0],
+              email: body[mapping.email] || body.email,
             };
           },
         });
-        strapi.log.info('✅ Successfully updated LinkedIn provider to use OpenID Connect (OIDC)');
+        strapi.log.info(`✅ Successfully updated OAuth provider ${providerName} using config/providers.ts`);
       }
     } catch (error) {
-      strapi.log.error('❌ Failed to update LinkedIn provider config', error);
+      strapi.log.error('❌ Failed to update dynamic providers from config/providers.ts', error);
     }
 
     // Add Arabic locale automatically if it doesn't exist

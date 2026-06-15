@@ -9,9 +9,33 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Middlewar
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          'connect-src': ["'self'", 'https:'],
-          'img-src': ["'self'", 'data:', 'blob:', 'localhost:*', '127.0.0.1:*', 'shuru-bkt.s3.eu-west-3.amazonaws.com'],
-          'media-src': ["'self'", 'data:', 'blob:', 'localhost:*', '127.0.0.1:*', 'shuru-bkt.s3.eu-west-3.amazonaws.com'],
+          'connect-src': [
+            "'self'",
+            "https:",
+            // OAuth providers
+            "https://accounts.google.com",
+            "https://www.googleapis.com",
+            "https://api.linkedin.com",
+            "https://www.linkedin.com",
+          ],
+          'img-src': [
+            "'self'",
+            'data:',
+            'blob:',
+            'localhost:*',
+            '127.0.0.1:*',
+            'shuru-bkt.s3.eu-west-3.amazonaws.com',
+            // Google profile images
+            "https://lh3.googleusercontent.com",
+          ],
+          'media-src': [
+            "'self'",
+            'data:',
+            'blob:',
+            'localhost:*',
+            '127.0.0.1:*',
+            'shuru-bkt.s3.eu-west-3.amazonaws.com',
+          ],
           upgradeInsecureRequests: null,
         },
       },
