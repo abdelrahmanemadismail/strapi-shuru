@@ -94,7 +94,7 @@ export default {
       }
 
       // 2. Sync keys, secrets, callbacks, and enable states from config/plugins.ts (if defined in config)
-      const configProviders = strapi.config.get('plugin::users-permissions.providers') || {};
+      const configProviders = (strapi.config.get('plugin::users-permissions') as any)?.providers || {};
       for (const [providerName, providerConfig] of Object.entries(configProviders) as [string, any][]) {
         if (!grantSettings[providerName]) {
           grantSettings[providerName] = {};
