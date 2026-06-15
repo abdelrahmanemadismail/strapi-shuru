@@ -17,6 +17,43 @@ export default {
    * run jobs, or perform some special logic.
    */
   async bootstrap({ strapi } /*: { strapi: Core.Strapi }*/) {
+    // Override LinkedIn provider configuration to use new OpenID Connect scopes and endpoint
+    try {
+      const registry = strapi.plugin('users-permissions').service('providers-registry');
+      const originalLinkedin = registry.get('linkedin');
+
+      if (originalLinkedin) {
+        registry.add('linkedin', {
+          ...originalLinkedin,
+          grantConfig: {
+            ...originalLinkedin.grantConfig,
+            scope: ['openid', 'profile', 'email'],
+          },
+          async authCallback({ accessToken }: { accessToken: string }) {
+            const response = await fetch('https://api.linkedin.com/v2/userinfo', {
+              headers: {
+                Authorization: `Bearer ${accessToken}`,
+              },
+            });
+
+            if (!response.ok) {
+              throw new Error('Failed to fetch user info from LinkedIn');
+            }
+
+            const body = await response.json() as any;
+
+            return {
+              username: body.name || body.given_name || `${body.given_name} ${body.family_name}` || body.email?.split('@')[0],
+              email: body.email,
+            };
+          },
+        });
+        strapi.log.info('✅ Successfully updated LinkedIn provider to use OpenID Connect (OIDC)');
+      }
+    } catch (error) {
+      strapi.log.error('❌ Failed to update LinkedIn provider config', error);
+    }
+
     // Add Arabic locale automatically if it doesn't exist
     const localeService = strapi.plugin('i18n').service('locales');
     const existingLocales = await localeService.find();
