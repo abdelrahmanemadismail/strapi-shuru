@@ -10,7 +10,7 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Plugin =>
           icon: 'linkedin',
           key: env('LINKEDIN_CLIENT_ID'),
           secret: env('LINKEDIN_CLIENT_SECRET'),
-          callback: 'https://www.shuru.sa/api/auth/callback/linkedin',
+          callback: env('CLIENT_URL', 'https://www.shuru.sa') + '/auth/callback',
           scope: ['openid', 'profile', 'email'],
         },
         google: {
@@ -18,7 +18,7 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Plugin =>
           icon: 'google',
           key: env('GOOGLE_CLIENT_ID'),
           secret: env('GOOGLE_CLIENT_SECRET'),
-          callback: 'https://www.shuru.sa/api/auth/callback/google',
+          callback: env('CLIENT_URL', 'https://www.shuru.sa') + '/auth/callback',
           scope: ['openid', 'profile', 'email'],
         },
       },
