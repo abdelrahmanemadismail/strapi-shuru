@@ -24,9 +24,7 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Middlewar
   {
     name: 'strapi::session',
     config: {
-      cookie: {
-        secure: env.bool('SESSION_SECURE', false),
-      },
+      secure: env.bool('SESSION_SECURE', false),
     },
   },
   'strapi::favicon',
