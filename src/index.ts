@@ -63,6 +63,78 @@ export default {
       strapi.log.error('❌ Failed to update dynamic providers from config/providers.ts', error);
     }
 
+    // Sync database store configuration for OAuth providers with config files
+    try {
+      const pluginStore = strapi.store({ type: 'plugin', name: 'users-permissions' });
+      const grantSettings = await pluginStore.get({ key: 'grant' }) || {};
+      let dbUpdated = false;
+
+      // 1. Sync scopes from config/providers.ts
+      for (const [providerName, providerConfig] of Object.entries(providers)) {
+        if (!providerConfig.enabled) continue;
+
+        const oauth2 = (providerConfig as any).oauth2;
+        if (!oauth2) continue;
+
+        if (grantSettings[providerName]) {
+          const dbProvider = grantSettings[providerName];
+          const targetScope = oauth2.scope;
+          const currentScope = dbProvider.scope;
+
+          const isScopeDifferent = !Array.isArray(currentScope) ||
+            currentScope.length !== targetScope.length ||
+            !currentScope.every((val: any, index: number) => val === targetScope[index]);
+
+          if (isScopeDifferent) {
+            dbProvider.scope = targetScope;
+            dbUpdated = true;
+            strapi.log.info(`🔄 Syncing OAuth scope for ${providerName} in database to: ${JSON.stringify(targetScope)}`);
+          }
+        }
+      }
+
+      // 2. Sync keys, secrets, callbacks, and enable states from config/plugins.ts (if defined in config)
+      const configProviders = strapi.config.get('plugin::users-permissions.providers') || {};
+      for (const [providerName, providerConfig] of Object.entries(configProviders) as [string, any][]) {
+        if (!grantSettings[providerName]) {
+          grantSettings[providerName] = {};
+        }
+
+        const dbProvider = grantSettings[providerName];
+
+        if (providerConfig.enabled !== undefined && dbProvider.enabled !== providerConfig.enabled) {
+          dbProvider.enabled = providerConfig.enabled;
+          dbUpdated = true;
+          strapi.log.info(`⚙️ Syncing OAuth enabled state for ${providerName} to: ${providerConfig.enabled}`);
+        }
+
+        if (providerConfig.key && dbProvider.key !== providerConfig.key) {
+          dbProvider.key = providerConfig.key;
+          dbUpdated = true;
+          strapi.log.info(`🔑 Syncing OAuth key for ${providerName} from config/plugins.ts to database`);
+        }
+
+        if (providerConfig.secret && dbProvider.secret !== providerConfig.secret) {
+          dbProvider.secret = providerConfig.secret;
+          dbUpdated = true;
+          strapi.log.info(`🔑 Syncing OAuth secret for ${providerName} from config/plugins.ts to database`);
+        }
+
+        if (providerConfig.callback && dbProvider.callback !== providerConfig.callback) {
+          dbProvider.callback = providerConfig.callback;
+          dbUpdated = true;
+          strapi.log.info(`🔗 Syncing OAuth callback for ${providerName} from config/plugins.ts to database`);
+        }
+      }
+
+      if (dbUpdated) {
+        await pluginStore.set({ key: 'grant', value: grantSettings });
+        strapi.log.info('✅ Database OAuth provider settings updated successfully');
+      }
+    } catch (error) {
+      strapi.log.error('❌ Failed to sync OAuth provider settings to database store', error);
+    }
+
     // Add Arabic locale automatically if it doesn't exist
     const localeService = strapi.plugin('i18n').service('locales');
     const existingLocales = await localeService.find();
