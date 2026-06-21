@@ -228,9 +228,9 @@ export interface SharedChallengeCard extends Struct.ComponentSchema {
     displayName: 'Challenge Card';
   };
   attributes: {
-    intervention: Schema.Attribute.Text;
     pain: Schema.Attribute.String;
     result: Schema.Attribute.String;
+    solution: Schema.Attribute.Text;
   };
 }
 

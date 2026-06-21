@@ -8,7 +8,7 @@
     "pain": {
       "type": "string"
     },
-    "intervention": {
+    "solution": {
       "type": "text"
     },
     "result": {

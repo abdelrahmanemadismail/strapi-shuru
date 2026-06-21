@@ -19,10 +19,10 @@ const pagesDataGrouped = {
         __component: "shared.challenges-section",
         title: "التحديات التنفيذية",
         challenges: [
-          { pain: "الاجتماعات منتظمة، والتقارير دقيقة، لكن القيادة لا تستطيع الإجابة بثقة: “هل نحن نتقدم فعلاً؟”", intervention: "تشخيص البيئة، تحليل الجدوى، قياس القيمة", result: "وضوح تام لما يحقق نتائج حقيقية" },
-          { pain: "المبادرات تتباطأ أو تفقد هدفها الأصلي", intervention: "نموذج تنفيذ مخصص، حوكمة مرنة، ضبط الصلاحيات", result: "المشاريع تنتهي كما خُطط لها" },
-          { pain: "الإدارة العليا تصبح “مدير مشروع”", intervention: "آلية تدخل قيادي منظمة، فصل القرار الاستراتيجي عن التشغيل، لوحات قيادة تنفيذية", result: "القيادة تقود الاتجاه" },
-          { pain: "استمرار المشاريع بلا جدوى", intervention: "قياس القيمة المستمر، إعادة ترتيب الأولويات، إيقاف المشاريع منخفضة الأثر", result: "توظيف أمثل للموارد وأثر أعلى" }
+          { pain: "الاجتماعات منتظمة، والتقارير دقيقة، لكن القيادة لا تستطيع الإجابة بثقة: “هل نحن نتقدم فعلاً؟”", solution: "تشخيص البيئة، تحليل الجدوى، قياس القيمة", result: "وضوح تام لما يحقق نتائج حقيقية" },
+          { pain: "المبادرات تتباطأ أو تفقد هدفها الأصلي", solution: "نموذج تنفيذ مخصص، حوكمة مرنة، ضبط الصلاحيات", result: "المشاريع تنتهي كما خُطط لها" },
+          { pain: "الإدارة العليا تصبح “مدير مشروع”", solution: "آلية تدخل قيادي منظمة، فصل القرار الاستراتيجي عن التشغيل، لوحات قيادة تنفيذية", result: "القيادة تقود الاتجاه" },
+          { pain: "استمرار المشاريع بلا جدوى", solution: "قياس القيمة المستمر، إعادة ترتيب الأولويات، إيقاف المشاريع منخفضة الأثر", result: "توظيف أمثل للموارد وأثر أعلى" }
         ]
       },
       {
@@ -46,10 +46,10 @@ const pagesDataGrouped = {
         __component: "shared.challenges-section",
         title: "Execution Challenges",
         challenges: [
-          { pain: "Regular meetings and accurate reports, but leadership cannot confidently answer: 'Are we really progressing?'", intervention: "Environment assessment, feasibility analysis, value measurement", result: "Absolute clarity on what achieves real results" },
-          { pain: "Initiatives slow down or lose their original purpose", intervention: "Custom execution model, agile governance, authority control", result: "Projects finish as planned" },
-          { pain: "Top management becomes a 'project manager'", intervention: "Structured leadership intervention mechanism, separating strategic decisions from operations, executive dashboards", result: "Leadership guides the direction" },
-          { pain: "Continuing projects with no value", intervention: "Continuous value measurement, reprioritization, stopping low-impact projects", result: "Optimal resource utilization and higher impact" }
+          { pain: "Regular meetings and accurate reports, but leadership cannot confidently answer: 'Are we really progressing?'", solution: "Environment assessment, feasibility analysis, value measurement", result: "Absolute clarity on what achieves real results" },
+          { pain: "Initiatives slow down or lose their original purpose", solution: "Custom execution model, agile governance, authority control", result: "Projects finish as planned" },
+          { pain: "Top management becomes a 'project manager'", solution: "Structured leadership intervention mechanism, separating strategic decisions from operations, executive dashboards", result: "Leadership guides the direction" },
+          { pain: "Continuing projects with no value", solution: "Continuous value measurement, reprioritization, stopping low-impact projects", result: "Optimal resource utilization and higher impact" }
         ]
       },
       {
@@ -308,8 +308,8 @@ const pagesDataGrouped = {
         subtitle: "يرجى قراءة هذه الشروط بعناية قبل استخدام موقعنا وخدماتنا."
       },
       {
-        __component: "shared.markdown-section",
-        content: `
+        __component: "shared.rich-text",
+        body: `
 ## 1. مقدمة
 مرحباً بك في موقع شروع. من خلال الوصول إلى موقعنا أو استخدام خدماتنا، فإنك توافق على الالتزام الصارم بهذه الشروط والأحكام. إذا كنت لا توافق على أي جزء من هذه الشروط، يرجى التوقف عن استخدام الموقع والخدمات فوراً.
 
@@ -353,8 +353,8 @@ const pagesDataGrouped = {
         subtitle: "Please read these terms carefully before using our website and services."
       },
       {
-        __component: "shared.markdown-section",
-        content: `
+        __component: "shared.rich-text",
+        body: `
 ## 1. Introduction
 Welcome to Shuru. By accessing or using our website and services, you agree to be strictly bound by these Terms and Conditions. If you do not agree to any part of these terms, please stop using our website and services immediately.
 
@@ -400,8 +400,8 @@ For any inquiries or feedback regarding these Terms and Conditions, please conta
         subtitle: "نحن نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية."
       },
       {
-        __component: "shared.markdown-section",
-        content: `
+        __component: "shared.rich-text",
+        body: `
 ## 1. التزامنا بالخصوصية
 في "شروع"، تعتبر خصوصيتك من أعلى أولوياتنا. نحن نلتزم بالشفافية الكاملة حول كيفية جمع بياناتك الشخصية واستخدامها وحمايتها عند زيارتك لموقعنا الإلكتروني أو الاستفادة من خدماتنا.
 
@@ -453,8 +453,8 @@ For any inquiries or feedback regarding these Terms and Conditions, please conta
         subtitle: "We respect your privacy and are committed to protecting your personal data."
       },
       {
-        __component: "shared.markdown-section",
-        content: `
+        __component: "shared.rich-text",
+        body: `
 ## 1. Our Commitment to Privacy
 At Shuru, your privacy is a top priority. We are committed to complete transparency regarding how we collect, use, and protect your personal data when you visit our website or utilize our services.
 
@@ -559,7 +559,8 @@ async function seedData() {
     // Allow pending queries to finish before destroying the app
     await new Promise(resolve => setTimeout(resolve, 2000));
   } catch (error) {
-    console.log('❌ Could not import seed data', error);
+    console.log('❌ Could not import seed data');
+    console.dir(error, { depth: null });
   } finally {
     await app.destroy();
     process.exit(0);
