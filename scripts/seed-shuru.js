@@ -10,24 +10,135 @@ const homeArabicData = {
   blocks: [
     {
       __component: "home.hero",
-      title: "نحول الاستراتيجية إلى تنفيذ يمكن الوثوق به",
-      subtitle: "ليست مشكلة المؤسسات نقص المشاريع… بل كثرتها. الفرق تعمل، المبادرات تبدأ، والتقارير تُرفع، لكن النتائج أقل من الجهد المبذول.\n\nنحن في شروع، لا نضيف إجراءات جديدة، بل نعيد تعريف كيف يُتخذ القرار التنفيذي لتصبح النتائج قابلة للتنبؤ.\n\nقيادتك تستحق وضوح النتائج… وليس الاجتهاد.",
-      primaryCtaText: "استعرض الحلول",
-      primaryCtaLink: "/solutions",
-      secondaryCtaText: "تواصل معنا",
-      secondaryCtaLink: "/contact"
+      badgeText: "شروع | شريك التنفيذ الذكي والتحول التشغيلي",
+      title: "تحويل الخطط الاستراتيجية إلى نتائج ملموسة",
+      subtitle: "نمكّن الجهات الحكومية، والشركات المؤسسية، والقطاع الثالث من تجاوز تحديات التنفيذ وسد الفجوات التشغيلية من خلال منهجيات تنفيذ ذكية تحول المعرفة إلى أثر مستدام.",
+      primaryCtaText: "احجز جلسة تشخيص",
+      primaryCtaLink: "/contact",
+      secondaryCtaText: "استكشف مسارات الحلول",
+      secondaryCtaLink: "#solutions",
+      targetAudiences: [
+        { label: "الجهات الحكومية", iconName: "Users" },
+        { label: "الشركات والقطاع الخاص", iconName: "BarChart3" },
+        { label: "القطاع غير الربحي والمؤسسات", iconName: "Zap" }
+      ],
+      showShowcase: true,
+      showcaseTitle: "منظومة التنفيذ الذكي من شروع",
+      showcaseSubtitle: "ربط التخطيط بالتشغيل الفعلي والنتائج الميدانية",
+      showcaseBadge: "نشط تشغيلياً",
+      metrics: [
+        { label: "معدل إنجاز المبادرات", value: "94.8%", subtext: "إنجاز حسب الخطة", progressPercent: 94.8 },
+        { label: "سرعة تفعيل الخطة", value: "3X", subtext: "أسرع من الطرق التقليدية", progressPercent: 85 },
+        { label: "المخرجات المعيارية", value: "100%", subtext: "موثقة ومقيسة الأثر", progressPercent: 100 },
+        { label: "نقل المعرفة والتمكين", value: "+50", subtext: "فريق كفاءات ممكّن", progressPercent: 75 }
+      ]
     },
     {
       __component: "home.overview",
-      title: "حلولنا تركز على النتائج الفعلية",
-      introText: "نحن في شروع لا نضيف إجراءات جديدة، بل نعيد تعريف كيفية اتخاذ القرار التنفيذي لتصبح النتائج قابلة للتنبؤ.",
-      ctaText: "اكتشف جميع الحلول",
+      badge: "مسارات الحلول المتكاملة",
+      title: "مسارات التنفيذ الذكي في شروع",
+      introText: "نجمع بين التشخيص الدقيق والتنفيذ الميداني وإدارة الأداء لضمان تحويل الخطط إلى نتائج ملموسة.",
+      ctaText: "اكتشف جميع مسارات الحلول",
       ctaLink: "/solutions",
       cards: [
-        { title: "تشخيص الواقع", description: "قياس قيمة المبادرات الحالية", iconName: "Activity" },
-        { title: "هندسة التنفيذ", description: "تصميم نموذج تنفيذ مخصص", iconName: "Target" },
-        { title: "حوكمة رشيقة", description: "إجراءات تدعم سرعة التنفيذ", iconName: "Zap" },
-        { title: "تمكين الفريق", description: "نقل القدرة والاستقلالية", iconName: "Check" }
+        {
+          title: "1. التشخيص وإعادة الهيكلة",
+          description: "تقييم الجاهزية التشغيلية وسد الفجوات مع بناء الهياكل التنظيمية المرنة.",
+          iconName: "Target",
+          badge: "المرحلة 01",
+          cardCtaText: "احجز جلسة مسار"
+        },
+        {
+          title: "2. تصميم استراتيجية التنفيذ",
+          description: "تحويل الرؤية والأهداف الكبرى إلى خريطة طريق قابلة للتطبيق والقياس.",
+          iconName: "LineChart",
+          badge: "المرحلة 02",
+          cardCtaText: "احجز جلسة مسار"
+        },
+        {
+          title: "3. التنفيذ الذكي والميداني",
+          description: "إدارة المبادرات التحولية والتشغيل المباشر مع متابعة لوحات الأداء اللحظية.",
+          iconName: "Cpu",
+          badge: "المرحلة 03",
+          cardCtaText: "احجز جلسة مسار"
+        },
+        {
+          title: "4. بناء القدرات والتمكين",
+          description: "تطوير الكفاءات القيادية والتطوير المؤسسي لنقل المعرفة وضمان الاستدامة.",
+          iconName: "Users2",
+          badge: "المرحلة 04",
+          cardCtaText: "احجز جلسة مسار"
+        }
+      ]
+    },
+    {
+      __component: "shared.timeline-section",
+      badge: "منهجية شروع",
+      title: "رحلة العمل: من الفكرة إلى الأثر المستدام",
+      introText: "رحلة واضحة المعالم بأربع مراحل متسلسلة تضمن وضوح المخرجات والشفافية التامة في كل خطوة.",
+      ctaText: "احجز جلسة تشخيص مجانية لجهة أعمالك",
+      ctaLink: "/contact",
+      steps: [
+        {
+          number: "01",
+          title: "التشخيص والتقييم",
+          description: "دراسة الواقع الميداني وتحديد الاختناقات والفجوات التشغيلية بدقة.",
+          deliverable: "المخرج: تقرير الفجوات وخارطة الطريق",
+          icon: "Search"
+        },
+        {
+          number: "02",
+          title: "التصميم الهندسي",
+          description: "بناء نماذج التشغيل المستهدفة وتصميم مؤشرات قياس الأداء والحلول.",
+          deliverable: "المخرج: نموذج التشغيل ومؤشرات KPIs",
+          icon: "Compass"
+        },
+        {
+          number: "03",
+          title: "التفعيل والمتابعة",
+          description: "إدارة المبادرات ميدانياً ومتابعة الإنجاز عبر لوحات بيانات لحظية.",
+          deliverable: "المخرج: تشغيل ميداني ولوحات متابعة",
+          icon: "Rocket"
+        },
+        {
+          number: "04",
+          title: "بناء القدرات والتمكين",
+          description: "نقل الخبرات وتطوير الكفاءات لضمان استدامة الأداء بعد تسليم المشروعات.",
+          deliverable: "المخرج: فرق عمل ممكّنة ونقل معرفي",
+          icon: "GraduationCap"
+        }
+      ]
+    },
+    {
+      __component: "home.trust-section",
+      badge: "مقومات الثقة والأثر",
+      title: "لماذا تختار شروع كشريك تنفيذ؟",
+      introText: "نجمع بين الخبرة العميقة والمنهجيات الذكية لضمان أعلى معايير الجودة والانضباط.",
+      items: [
+        {
+          icon: "Award",
+          title: "خبرات استشارية وتنفيذية",
+          description: "فريق قيادي يتمتع بخبرات متراكمة في إدارة المبادرات الوطنية الكبرى والتحول المؤسسي.",
+          tag: "معتمد وموثق"
+        },
+        {
+          icon: "Workflow",
+          title: "منهجيات تنفيذ معتمدة",
+          description: "أطر عمل محوّكمة تضمن سرعة الانطلاق واستدامة الأداء وضبط المخاطر.",
+          tag: "معتمد وموثق"
+        },
+        {
+          icon: "Building2",
+          title: "شراكات وتنوع القطاعات",
+          description: "سجل حافل بالعمل مع القطاعات الحكومية، والشركات الكبرى، والمؤسسات التنموية.",
+          tag: "معتمد وموثق"
+        },
+        {
+          icon: "Users",
+          title: "تمكين الفرق ونقل المعرفة",
+          description: "لا نكتفي بتقديم التوصيات، بل نعمل جنباً إلى جنب لبناء قدرات الفريق المحلي.",
+          tag: "معتمد وموثق"
+        }
       ]
     },
     {
@@ -67,24 +178,135 @@ const homeEnglishData = {
   blocks: [
     {
       __component: "home.hero",
-      title: "We turn strategy into execution you can trust",
-      subtitle: "The problem for organizations is not a lack of projects... but an abundance of them. Teams work, initiatives start, and reports are submitted, but the results fall short of the effort expended.\n\nAt Shuru, we don't add new procedures, but redefine how executive decisions are made so results become predictable.\n\nYour leadership deserves clarity in results... not guesswork.",
-      primaryCtaText: "Explore Solutions",
-      primaryCtaLink: "/solutions",
-      secondaryCtaText: "Contact Us",
-      secondaryCtaLink: "/contact"
+      badgeText: "SHURU | Smart Execution & Operational Transformation",
+      title: "Transforming Strategic Plans Into Tangible Results",
+      subtitle: "We empower government entities, enterprise organizations, and non-profits to overcome execution bottlenecks through smart methodologies that translate knowledge into lasting impact.",
+      primaryCtaText: "Book a Diagnostic Session",
+      primaryCtaLink: "/contact",
+      secondaryCtaText: "Explore Solutions",
+      secondaryCtaLink: "#solutions",
+      targetAudiences: [
+        { label: "Government Entities", iconName: "Users" },
+        { label: "Enterprises", iconName: "BarChart3" },
+        { label: "Non-Profits", iconName: "Zap" }
+      ],
+      showShowcase: true,
+      showcaseTitle: "Shuru Smart Execution Engine",
+      showcaseSubtitle: "Connecting strategic planning to live operational outputs",
+      showcaseBadge: "Active Execution",
+      metrics: [
+        { label: "Initiatives Delivery", value: "94.8%", subtext: "Target On-Track", progressPercent: 94.8 },
+        { label: "Activation Speed", value: "3X", subtext: "Faster than average", progressPercent: 85 },
+        { label: "Standard Deliverables", value: "100%", subtext: "Fully Documented", progressPercent: 100 },
+        { label: "Knowledge Transfer", value: "+50", subtext: "Empowered Teams", progressPercent: 75 }
+      ]
     },
     {
       __component: "home.overview",
-      title: "Our solutions focus on actual results",
-      introText: "At Shuru, we don't add new procedures; we redefine how executive decisions are made to make outcomes predictable.",
+      badge: "Integrated Solution Tracks",
+      title: "Shuru Smart Execution Pathways",
+      introText: "Combining diagnostic assessment with field execution to guarantee measurable results.",
       ctaText: "Discover all solutions",
       ctaLink: "/solutions",
       cards: [
-        { title: "Assess Reality", description: "Measure the value of current initiatives", iconName: "Activity" },
-        { title: "Execution Engineering", description: "Design a custom execution model", iconName: "Target" },
-        { title: "Agile Governance", description: "Procedures that support execution speed", iconName: "Zap" },
-        { title: "Team Enablement", description: "Transfer capability and independence", iconName: "Check" }
+        {
+          title: "1. Diagnosis & Restructuring",
+          description: "Operational readiness assessment and bridging gaps with agile organizational structures.",
+          iconName: "Target",
+          badge: "Phase 01",
+          cardCtaText: "Book Track Session"
+        },
+        {
+          title: "2. Execution Strategy Design",
+          description: "Translating strategy into actionable and measurable roadmaps.",
+          iconName: "LineChart",
+          badge: "Phase 02",
+          cardCtaText: "Book Track Session"
+        },
+        {
+          title: "3. Smart Field Execution",
+          description: "Transformational initiative delivery with real-time performance dashboards.",
+          iconName: "Cpu",
+          badge: "Phase 03",
+          cardCtaText: "Book Track Session"
+        },
+        {
+          title: "4. Capacity Building & Enablement",
+          description: "Developing leadership capabilities and internal knowledge transfer.",
+          iconName: "Users2",
+          badge: "Phase 04",
+          cardCtaText: "Book Track Session"
+        }
+      ]
+    },
+    {
+      __component: "shared.timeline-section",
+      badge: "Shuru Methodology",
+      title: "Our Work Journey: From Concept to Impact",
+      introText: "A structured 4-stage process ensuring total clarity and measurable deliverables at every phase.",
+      ctaText: "Book a Diagnostic Session for Your Entity",
+      ctaLink: "/contact",
+      steps: [
+        {
+          number: "01",
+          title: "Diagnosis & Assessment",
+          description: "Analyzing operational realities and pin-pointing bottlenecks.",
+          deliverable: "Deliverable: Gap Analysis & Roadmap",
+          icon: "Search"
+        },
+        {
+          number: "02",
+          title: "Operational Design",
+          description: "Designing target operating models and performance KPI metrics.",
+          deliverable: "Deliverable: Target Operating Model & KPIs",
+          icon: "Compass"
+        },
+        {
+          number: "03",
+          title: "Activation & Execution",
+          description: "Executing initiatives on the ground with live performance dashboards.",
+          deliverable: "Deliverable: Live Field Execution & Dashboards",
+          icon: "Rocket"
+        },
+        {
+          number: "04",
+          title: "Capacity Building",
+          description: "Transferring knowledge and empowering teams for sustained impact.",
+          deliverable: "Deliverable: Empowered Teams & Knowledge Transfer",
+          icon: "GraduationCap"
+        }
+      ]
+    },
+    {
+      __component: "home.trust-section",
+      badge: "Pillars of Trust & Impact",
+      title: "Why Partner With Shuru?",
+      introText: "Combining deep expertise with smart execution methodologies for reliable outcomes.",
+      items: [
+        {
+          icon: "Award",
+          title: "Consulting & Field Expertise",
+          description: "Leadership team with extensive track records in major national transformational programs.",
+          tag: "Verified Standard"
+        },
+        {
+          icon: "Workflow",
+          title: "Proven Methodologies",
+          description: "Governed frameworks guaranteeing speed, risk management, and outcome sustainability.",
+          tag: "Verified Standard"
+        },
+        {
+          icon: "Building2",
+          title: "Cross-Sector Partnerships",
+          description: "Proven success record across public entities, enterprises, and non-profits.",
+          tag: "Verified Standard"
+        },
+        {
+          icon: "Users",
+          title: "Team Empowerment",
+          description: "We work side-by-side with local teams to transfer knowledge and build capability.",
+          tag: "Verified Standard"
+        }
       ]
     },
     {

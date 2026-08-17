@@ -17,7 +17,13 @@
     },
     "iconName": {
       "type": "string",
-      "description": "Name of the icon to render (e.g. Activity, Target, Zap)"
+      "description": "Name of the icon to render (e.g. Activity, Target, Zap, Cpu, Users2, LineChart)"
+    },
+    "badge": {
+      "type": "string"
+    },
+    "cardCtaText": {
+      "type": "string"
     }
   }
 }

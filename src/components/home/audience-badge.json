@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_home_audience_badges",
+  "info": {
+    "displayName": "Audience Badge",
+    "description": "Target audience pill badge"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "iconName": {
+      "type": "string"
+    }
+  }
+}

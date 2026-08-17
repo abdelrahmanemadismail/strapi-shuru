@@ -2,17 +2,30 @@
   "collectionName": "components_shared_timeline_sections",
   "info": {
     "displayName": "Timeline Section",
-    "description": "To handle the Linear Process/Timeline on the Methodology Page."
+    "description": "To handle the Process/Timeline and Methodology Journey."
   },
   "options": {},
   "attributes": {
-    "title": {
+    "badge": {
       "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "introText": {
+      "type": "text"
     },
     "steps": {
       "type": "component",
       "repeatable": true,
       "component": "shared.timeline-step"
+    },
+    "ctaText": {
+      "type": "string"
+    },
+    "ctaLink": {
+      "type": "string"
     }
   }
 }

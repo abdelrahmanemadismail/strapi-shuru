@@ -60,49 +60,387 @@ const pagesDataGrouped = {
       }
     ] }
   },
+  services: {
+    ar: { title: "الخدمات", slug: "services", locale: "ar", blocks: [
+      {
+        __component: "home.hero",
+        badgeText: "خدمات شروع الاستشارية والتنفيذية",
+        title: "حلول وخدمات متكاملة لتحويل الاستراتيجيات إلى واقع ملموس",
+        subtitle: "نقدم منظومة متكاملة من الخدمات الاستشارية والتنفيذية التي تركز على سد الفجوات التشغيلية وتحقيق الأثر المستدام للجهات الحكومية والخاصة وغير الربحية.",
+        primaryCtaText: "احجز جلسة استشارية",
+        primaryCtaLink: "/contact",
+        secondaryCtaText: "استعرض المنهجية",
+        secondaryCtaLink: "/methodology"
+      },
+      {
+        __component: "home.overview",
+        badge: "مسارات الخدمات",
+        title: "مسارات التنفيذ والخدمات الاستشارية",
+        introText: "خدمات مصممة لمعالجة أدق التفاصيل التشغيلية وضمان أعلى مستويات الكفاءة والانضباط.",
+        cards: [
+          {
+            title: "1. التشخيص وإعادة الهيكلة",
+            description: "تقييم الجاهزية التشغيلية وسد الفجوات مع بناء الهياكل التنظيمية المرنة.",
+            iconName: "Target",
+            badge: "المرحلة 01",
+            cardCtaText: "طلب الخدمة"
+          },
+          {
+            title: "2. تصميم استراتيجية التنفيذ",
+            description: "تحويل الرؤية والأهداف الكبرى إلى خريطة طريق قابلة للتطبيق والقياس.",
+            iconName: "LineChart",
+            badge: "المرحلة 02",
+            cardCtaText: "طلب الخدمة"
+          },
+          {
+            title: "3. التنفيذ الذكي والميداني",
+            description: "إدارة المبادرات التحولية والتشغيل المباشر مع متابعة لوحات الأداء اللحظية.",
+            iconName: "Cpu",
+            badge: "المرحلة 03",
+            cardCtaText: "طلب الخدمة"
+          },
+          {
+            title: "4. بناء القدرات والتمكين",
+            description: "تطوير الكفاءات القيادية والتطوير المؤسسي لنقل المعرفة وضمان الاستدامة.",
+            iconName: "Users2",
+            badge: "المرحلة 04",
+            cardCtaText: "طلب الخدمة"
+          }
+        ]
+      },
+      {
+        __component: "shared.challenges-section",
+        title: "التحديات التشغيلية التي نعالجها",
+        introText: "نساعد قيادات المنظمات على التغلب على أبرز العوائق التشغيلية وتحقيق نتائج ملموسة.",
+        challenges: [
+          { pain: "بطء تنفيذ المبادرات وتأخر تسليم المخرجات عن مواعيدها", solution: "هندسة نماذج التشغيل وضبط مسارات الحوكمة المرنة", result: "تسريع وتيرة الإنجاز بنسبة 3X" },
+          { pain: "صعوبة قياس الأداء وغياب لوحات المتابعة اللحظية", solution: "بناء لوحات مؤشرات أداء ذكية تربط القرارات بالبيانات", result: "وضوح لحظي تام للقيادة العليا" },
+          { pain: "انفصال الخطط الاستراتيجية عن التشغيل الميداني اليومي", solution: "ربط الأهداف بالعمليات وتحديد المسؤوليات بدقة", result: "تحول كامل من التخطيط للتنفيذ" },
+          { pain: "الاعتماد الدائم على المستشارين الخارجيين", solution: "نقل المعرفة والتدريب العملي لفرق العمل الداخلية", result: "استدامة الأداء وبناء كفاءات محلية" }
+        ]
+      },
+      {
+        __component: "home.trust-section",
+        badge: "مقومات الثقة والأثر",
+        title: "لماذا تختار شروع كشريك تنفيذ؟",
+        introText: "نجمع بين الخبرة العميقة والمنهجيات الذكية لضمان أعلى معايير الجودة والانضباط.",
+        items: [
+          {
+            icon: "Award",
+            title: "خبرات استشارية وتنفيذية",
+            description: "فريق قيادي يتمتع بخبرات متراكمة في إدارة المبادرات الوطنية الكبرى والتحول المؤسسي.",
+            tag: "معتمد وموثق"
+          },
+          {
+            icon: "Workflow",
+            title: "منهجيات تنفيذ معتمدة",
+            description: "أطر عمل محوّكمة تضمن سرعة الانطلاق واستدامة الأداء وضبط المخاطر.",
+            tag: "معتمد وموثق"
+          },
+          {
+            icon: "Building2",
+            title: "شراكات وتنوع القطاعات",
+            description: "سجل حافل بالعمل مع القطاعات الحكومية، والشركات الكبرى، والمؤسسات التنموية.",
+            tag: "معتمد وموثق"
+          },
+          {
+            icon: "Users",
+            title: "تمكين الفرق ونقل المعرفة",
+            description: "لا نكتفي بتقديم التوصيات، بل نعمل جنباً إلى جنب لبناء قدرات الفريق المحلي.",
+            tag: "معتمد وموثق"
+          }
+        ]
+      },
+      {
+        __component: "home.cta-footer",
+        headline: "هل ترغب في مناقشة احتياجات منظمتك؟",
+        primaryButtonText: "احجز جلسة استشارية متخصصة",
+        primaryButtonLink: "/contact"
+      }
+    ] },
+    en: { title: "Services", slug: "services", locale: "en", blocks: [
+      {
+        __component: "home.hero",
+        badgeText: "Shuru Consulting & Execution Services",
+        title: "Integrated Solutions to Turn Strategy into Reality",
+        subtitle: "We offer end-to-end consulting and execution services designed to bridge operational gaps and deliver sustainable impact for government, enterprise, and non-profit entities.",
+        primaryCtaText: "Book a Consultation",
+        primaryCtaLink: "/contact",
+        secondaryCtaText: "Explore Methodology",
+        secondaryCtaLink: "/methodology"
+      },
+      {
+        __component: "home.overview",
+        badge: "Service Tracks",
+        title: "Smart Execution & Advisory Tracks",
+        introText: "Services engineered to address detailed operational requirements and ensure maximum efficiency.",
+        cards: [
+          {
+            title: "1. Diagnosis & Restructuring",
+            description: "Operational readiness assessment and bridging gaps with agile organizational structures.",
+            iconName: "Target",
+            badge: "Phase 01",
+            cardCtaText: "Request Service"
+          },
+          {
+            title: "2. Execution Strategy Design",
+            description: "Translating strategy into actionable and measurable roadmaps.",
+            iconName: "LineChart",
+            badge: "Phase 02",
+            cardCtaText: "Request Service"
+          },
+          {
+            title: "3. Smart Field Execution",
+            description: "Transformational initiative delivery with real-time performance dashboards.",
+            iconName: "Cpu",
+            badge: "Phase 03",
+            cardCtaText: "Request Service"
+          },
+          {
+            title: "4. Capacity Building & Enablement",
+            description: "Developing leadership capabilities and internal knowledge transfer.",
+            iconName: "Users2",
+            badge: "Phase 04",
+            cardCtaText: "Request Service"
+          }
+        ]
+      },
+      {
+        __component: "shared.challenges-section",
+        title: "Operational Challenges We Solve",
+        introText: "Helping organization leaders overcome key operational obstacles to achieve measurable outcomes.",
+        challenges: [
+          { pain: "Slow initiative delivery and delayed project milestones", solution: "Target operating models and agile governance", result: "3X Faster Execution Pace" },
+          { pain: "Difficulty tracking live KPIs and lack of real-time visibility", solution: "Smart executive dashboards connecting decisions with data", result: "Complete Real-time Clarity" },
+          { pain: "Disconnection between high-level strategies and daily operations", solution: "Aligning goals with field operations and clear accountability", result: "Seamless Strategy-to-Execution" },
+          { pain: "Over-reliance on external consultants without capability building", solution: "Hands-on knowledge transfer and internal team enablement", result: "Long-term Team Independence" }
+        ]
+      },
+      {
+        __component: "home.trust-section",
+        badge: "Pillars of Trust & Impact",
+        title: "Why Partner With Shuru?",
+        introText: "Combining deep expertise with smart execution methodologies for reliable outcomes.",
+        items: [
+          {
+            icon: "Award",
+            title: "Consulting & Field Expertise",
+            description: "Leadership team with extensive track records in major national transformational programs.",
+            tag: "Verified Standard"
+          },
+          {
+            icon: "Workflow",
+            title: "Proven Methodologies",
+            description: "Governed frameworks guaranteeing speed, risk management, and outcome sustainability.",
+            tag: "Verified Standard"
+          },
+          {
+            icon: "Building2",
+            title: "Cross-Sector Partnerships",
+            description: "Proven success record across public entities, enterprises, and non-profits.",
+            tag: "Verified Standard"
+          },
+          {
+            icon: "Users",
+            title: "Team Empowerment",
+            description: "We work side-by-side with local teams to transfer knowledge and build capability.",
+            tag: "Verified Standard"
+          }
+        ]
+      },
+      {
+        __component: "home.cta-footer",
+        headline: "Ready to discuss your entity's requirements?",
+        primaryButtonText: "Book a Diagnostic Session",
+        primaryButtonLink: "/contact"
+      }
+    ] }
+  },
   methodology: {
     ar: { title: "المنهجية", slug: "methodology", locale: "ar", blocks: [
       {
+        __component: "home.hero",
+        badgeText: "منهجية شروع المعتمدة",
+        title: "منهجية تحول الأفكار إلى أثر مستدام",
+        subtitle: "نعتمد على إطار عمل متكامل يتجاوز التنظير التقليدي، ويركز على التشغيل الفعلي ونقل المعرفة لبناء قدرات مستدامة.",
+        primaryCtaText: "احجز جلسة تشخيص",
+        primaryCtaLink: "/contact",
+        secondaryCtaText: "استكشف الخدمات",
+        secondaryCtaLink: "/services"
+      },
+      {
         __component: "shared.timeline-section",
-        title: "منهجية شروع",
+        badge: "مراحل رحلة العمل",
+        title: "رحلة العمل: من الفكرة إلى الأثر المستدام",
+        introText: "رحلة واضحة المعالم بأربع مراحل متسلسلة تضمن وضوح المخرجات والشفافية التامة في كل خطوة.",
+        ctaText: "احجز جلسة تشخيص مجانية لجهة أعمالك",
+        ctaLink: "/contact",
         steps: [
-          { title: "فهم الواقع – Assess Reality", description: "نقيم الواقع التنفيذي كما هو، لا كما يُرفع في التقارير", icon: "Chart" },
-          { title: "إعادة التصميم – Redesign", description: "نصمم طريقة اتخاذ القرار لتقليل الهدر البيروقراطي", icon: "Blueprint" },
-          { title: "التفعيل الحقيقي – Implement", description: "نطبق النموذج داخل مشاريعك القائمة لنرى الأثر فوراً", icon: "Implementation" },
-          { title: "نقل القدرة – Transfer Capability", description: "نمكّن فريقك ليصبح قادراً على الاستمرار بدوننا", icon: "Empowerment" }
+          {
+            number: "01",
+            title: "التشخيص والتقييم – Diagnosis & Assessment",
+            description: "دراسة الواقع الميداني وتحديد الاختناقات والفجوات التشغيلية بدقة.",
+            deliverable: "المخرج: تقرير الفجوات وخارطة الطريق",
+            icon: "Search"
+          },
+          {
+            number: "02",
+            title: "التصميم الهندسي – Operational Design",
+            description: "بناء نماذج التشغيل المستهدفة وتصميم مؤشرات قياس الأداء والحلول.",
+            deliverable: "المخرج: نموذج التشغيل ومؤشرات KPIs",
+            icon: "Compass"
+          },
+          {
+            number: "03",
+            title: "التفعيل والمتابعة – Activation & Execution",
+            description: "إدارة المبادرات ميدانياً ومتابعة الإنجاز عبر لوحات بيانات لحظية.",
+            deliverable: "المخرج: تشغيل ميداني ولوحات متابعة",
+            icon: "Rocket"
+          },
+          {
+            number: "04",
+            title: "بناء القدرات والتمكين – Capacity Building",
+            description: "نقل الخبرات وتطوير الكفاءات لضمان استدامة الأداء بعد تسليم المشروعات.",
+            deliverable: "المخرج: فرق عمل ممكّنة ونقل معرفي",
+            icon: "GraduationCap"
+          }
         ]
       },
       {
         __component: "shared.quote-section",
-        quoteText: "الهدف ليس إدارة مشاريعك، بل أن لا تحتاج لمن يديرها لك."
+        quoteText: "الهدف ليس إدارة مشاريعك، بل أن لا تحتاج لمن يديرها لك.",
+        author: "شروع للاستشارات والتنفيذ"
+      },
+      {
+        __component: "home.trust-section",
+        badge: "مقومات الثقة والأثر",
+        title: "لماذا تختار شروع كشريك تنفيذ؟",
+        introText: "نجمع بين الخبرة العميقة والمنهجيات الذكية لضمان أعلى معايير الجودة والانضباط.",
+        items: [
+          {
+            icon: "Award",
+            title: "خبرات استشارية وتنفيذية",
+            description: "فريق قيادي يتمتع بخبرات متراكمة في إدارة المبادرات الوطنية الكبرى والتحول المؤسسي.",
+            tag: "معتمد وموثق"
+          },
+          {
+            icon: "Workflow",
+            title: "منهجيات تنفيذ معتمدة",
+            description: "أطر عمل محوّكمة تضمن سرعة الانطلاق واستدامة الأداء وضبط المخاطر.",
+            tag: "معتمد وموثق"
+          },
+          {
+            icon: "Building2",
+            title: "شراكات وتنوع القطاعات",
+            description: "سجل حافل بالعمل مع القطاعات الحكومية، والشركات الكبرى، والمؤسسات التنموية.",
+            tag: "معتمد وموثق"
+          },
+          {
+            icon: "Users",
+            title: "تمكين الفرق ونقل المعرفة",
+            description: "لا نكتفي بتقديم التوصيات، بل نعمل جنباً إلى جنب لبناء قدرات الفريق المحلي.",
+            tag: "معتمد وموثق"
+          }
+        ]
       },
       {
         __component: "home.cta-footer",
-        headline: "دعنا نطبق منهجيتنا معاً",
+        headline: "دعنا نطبق منهجيتنا معاً في منظمتك",
         primaryButtonText: "احجز جلسة استشارية للتطبيق العملي",
-        primaryButtonLink: "/consultation"
+        primaryButtonLink: "/contact"
       }
     ] },
     en: { title: "Methodology", slug: "methodology", locale: "en", blocks: [
       {
+        __component: "home.hero",
+        badgeText: "Proven Shuru Methodology",
+        title: "A Structured Process from Concept to Sustainable Impact",
+        subtitle: "We adopt a comprehensive execution framework that moves beyond conventional theory to real field operation and institutional capability transfer.",
+        primaryCtaText: "Book a Diagnostic Session",
+        primaryCtaLink: "/contact",
+        secondaryCtaText: "Explore Services",
+        secondaryCtaLink: "/services"
+      },
+      {
         __component: "shared.timeline-section",
-        title: "Shuru Methodology",
+        badge: "Journey Phases",
+        title: "Our Work Journey: From Concept to Impact",
+        introText: "A structured 4-stage process ensuring total clarity and measurable deliverables at every phase.",
+        ctaText: "Book a Diagnostic Session for Your Entity",
+        ctaLink: "/contact",
         steps: [
-          { title: "Assess Reality", description: "We assess the executive reality as it is, not as reported in reports", icon: "Chart" },
-          { title: "Redesign", description: "We design the decision-making method to reduce bureaucratic waste", icon: "Blueprint" },
-          { title: "Implement", description: "We apply the model within your existing projects to see immediate impact", icon: "Implementation" },
-          { title: "Transfer Capability", description: "We empower your team to be able to continue without us", icon: "Empowerment" }
+          {
+            number: "01",
+            title: "Diagnosis & Assessment",
+            description: "Analyzing operational realities and pin-pointing bottlenecks.",
+            deliverable: "Deliverable: Gap Analysis & Roadmap",
+            icon: "Search"
+          },
+          {
+            number: "02",
+            title: "Operational Design",
+            description: "Designing target operating models and performance KPI metrics.",
+            deliverable: "Deliverable: Target Operating Model & KPIs",
+            icon: "Compass"
+          },
+          {
+            number: "03",
+            title: "Activation & Execution",
+            description: "Executing initiatives on the ground with live performance dashboards.",
+            deliverable: "Deliverable: Live Field Execution & Dashboards",
+            icon: "Rocket"
+          },
+          {
+            number: "04",
+            title: "Capacity Building",
+            description: "Transferring knowledge and empowering teams for sustained impact.",
+            deliverable: "Deliverable: Empowered Teams & Knowledge Transfer",
+            icon: "GraduationCap"
+          }
         ]
       },
       {
         __component: "shared.quote-section",
-        quoteText: "The goal is not to manage your projects, but that you won't need someone to manage them for you."
+        quoteText: "The goal is not to manage your projects, but that you won't need someone to manage them for you.",
+        author: "Shuru Consulting & Execution"
+      },
+      {
+        __component: "home.trust-section",
+        badge: "Pillars of Trust & Impact",
+        title: "Why Partner With Shuru?",
+        introText: "Combining deep expertise with smart execution methodologies for reliable outcomes.",
+        items: [
+          {
+            icon: "Award",
+            title: "Consulting & Field Expertise",
+            description: "Leadership team with extensive track records in major national transformational programs.",
+            tag: "Verified Standard"
+          },
+          {
+            icon: "Workflow",
+            title: "Proven Methodologies",
+            description: "Governed frameworks guaranteeing speed, risk management, and outcome sustainability.",
+            tag: "Verified Standard"
+          },
+          {
+            icon: "Building2",
+            title: "Cross-Sector Partnerships",
+            description: "Proven success record across public entities, enterprises, and non-profits.",
+            tag: "Verified Standard"
+          },
+          {
+            icon: "Users",
+            title: "Team Empowerment",
+            description: "We work side-by-side with local teams to transfer knowledge and build capability.",
+            tag: "Verified Standard"
+          }
+        ]
       },
       {
         __component: "home.cta-footer",
-        headline: "Let's apply our methodology together",
+        headline: "Let's apply our methodology together in your organization",
         primaryButtonText: "Book a practical consultation session",
-        primaryButtonLink: "/consultation"
+        primaryButtonLink: "/contact"
       }
     ] }
   },

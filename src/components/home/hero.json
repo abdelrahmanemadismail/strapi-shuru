@@ -2,11 +2,14 @@
   "collectionName": "components_home_heroes",
   "info": {
     "displayName": "Hero",
-    "description": "Homepage hero section",
+    "description": "Homepage hero section with customizable showcase and metrics",
     "icon": "image"
   },
   "options": {},
   "attributes": {
+    "badgeText": {
+      "type": "string"
+    },
     "title": {
       "type": "string",
       "required": true
@@ -25,6 +28,29 @@
     },
     "secondaryCtaLink": {
       "type": "string"
+    },
+    "targetAudiences": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.audience-badge"
+    },
+    "showShowcase": {
+      "type": "boolean",
+      "default": true
+    },
+    "showcaseTitle": {
+      "type": "string"
+    },
+    "showcaseSubtitle": {
+      "type": "string"
+    },
+    "showcaseBadge": {
+      "type": "string"
+    },
+    "metrics": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.metric-item"
     },
     "image": {
       "type": "media",

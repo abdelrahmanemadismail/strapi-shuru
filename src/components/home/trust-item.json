@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_home_trust_items",
+  "info": {
+    "displayName": "Trust Item",
+    "description": "Item for trust and credibility highlights"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "string",
+      "description": "Icon name (e.g. Award, Workflow, Building2, Users, ShieldCheck)"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "tag": {
+      "type": "string"
+    }
+  }
+}
