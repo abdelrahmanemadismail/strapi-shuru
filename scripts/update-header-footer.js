@@ -1,7 +1,9 @@
 'use strict';
 
+const token = '799604a0c950d4b9e7f5d71388d43bd9e3a38fa8018316db87085876f2f728253b0bac9bd83d905c86f6513d80b923a361b0f89c022160669555c0c90d124fb32e10004a97fa21d4490a1be00b4f243ad4174e5918665d4939c4ae660213caaa27524535fc2d2e4599197ed5ce241af99ea42870374dd3196a9060b1ca9ed6e1';
+const baseUrl = 'https://cms.shuru.sa/api';
+
 const headerArabicData = {
-  locale: "ar",
   navigation: {
     primaryMenuItems: [
       { label: "الرئيسية", url: "/", onHeader: true, onSideBar: true, order: 1 },
@@ -22,7 +24,6 @@ const headerArabicData = {
 };
 
 const headerEnglishData = {
-  locale: "en",
   navigation: {
     primaryMenuItems: [
       { label: "Home", url: "/", onHeader: true, onSideBar: true, order: 1 },
@@ -43,7 +44,6 @@ const headerEnglishData = {
 };
 
 const footerArabicData = {
-  locale: "ar",
   description: "نحول الاستراتيجية إلى تنفيذ يمكن الوثوق به. نبني ونطور منظومات التنفيذ والحوكمة والمعرفة المؤسسية للجهات القيادية في المملكة.",
   columns: [
     {
@@ -96,7 +96,6 @@ const footerArabicData = {
 };
 
 const footerEnglishData = {
-  locale: "en",
   description: "Turning strategy into trusted execution. Building and scaling execution engines, governance, and institutional intelligence for leaders.",
   columns: [
     {
@@ -148,41 +147,46 @@ const footerEnglishData = {
   ]
 };
 
-async function seedHeaderFooter() {
-  const { createStrapi, compileStrapi } = require('@strapi/strapi');
-  const appContext = await compileStrapi();
-  const app = await createStrapi(appContext).load();
-  app.log.level = 'info';
+async function updateRemoteHeaderAndFooter() {
+  console.log('🚀 Updating Header and Footer on https://cms.shuru.sa ...');
 
-  try {
-    for (const [locale, data] of Object.entries({ ar: headerArabicData, en: headerEnglishData })) {
-      console.log(`Seeding Header in ${locale}...`);
-      const existing = await app.documents('api::header.header').findFirst({ filters: { locale } });
-      if (existing) {
-        await app.documents('api::header.header').update({ documentId: existing.documentId, locale, data, status: 'published' });
-      } else {
-        await app.documents('api::header.header').create({ locale, data, status: 'published' });
-      }
-    }
+  console.log('Updating Arabic Header on remote...');
+  const putArHeader = await fetch(`${baseUrl}/header?locale=ar&status=published`, {
+    method: 'PUT',
+    headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ data: headerArabicData })
+  });
+  console.log('Arabic Header Status:', putArHeader.status);
+  if (!putArHeader.ok) console.log(await putArHeader.text());
 
-    for (const [locale, data] of Object.entries({ ar: footerArabicData, en: footerEnglishData })) {
-      console.log(`Seeding Footer in ${locale}...`);
-      const existing = await app.documents('api::footer.footer').findFirst({ filters: { locale } });
-      if (existing) {
-        await app.documents('api::footer.footer').update({ documentId: existing.documentId, locale, data, status: 'published' });
-      } else {
-        await app.documents('api::footer.footer').create({ locale, data, status: 'published' });
-      }
-    }
+  console.log('Updating English Header on remote...');
+  const putEnHeader = await fetch(`${baseUrl}/header?locale=en&status=published`, {
+    method: 'PUT',
+    headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ data: headerEnglishData })
+  });
+  console.log('English Header Status:', putEnHeader.status);
+  if (!putEnHeader.ok) console.log(await putEnHeader.text());
 
-    console.log('\n✅ Seeding Header & Footer completed successfully!');
-    await new Promise(resolve => setTimeout(resolve, 2000));
-  } catch (error) {
-    console.error('❌ Could not import seed data', error);
-  } finally {
-    await app.destroy();
-    process.exit(0);
-  }
+  console.log('Updating Arabic Footer on remote...');
+  const putArFooter = await fetch(`${baseUrl}/footer?locale=ar&status=published`, {
+    method: 'PUT',
+    headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ data: footerArabicData })
+  });
+  console.log('Arabic Footer Status:', putArFooter.status);
+  if (!putArFooter.ok) console.log(await putArFooter.text());
+
+  console.log('Updating English Footer on remote...');
+  const putEnFooter = await fetch(`${baseUrl}/footer?locale=en&status=published`, {
+    method: 'PUT',
+    headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ data: footerEnglishData })
+  });
+  console.log('English Footer Status:', putEnFooter.status);
+  if (!putEnFooter.ok) console.log(await putEnFooter.text());
+
+  console.log('\n🎉 Header & Footer successfully updated on https://cms.shuru.sa !');
 }
 
-seedHeaderFooter().catch(console.error);
+updateRemoteHeaderAndFooter().catch(console.error);

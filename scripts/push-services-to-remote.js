@@ -1,6 +1,9 @@
 'use strict';
 
-const sampleServices = [
+const token = '799604a0c950d4b9e7f5d71388d43bd9e3a38fa8018316db87085876f2f728253b0bac9bd83d905c86f6513d80b923a361b0f89c022160669555c0c90d124fb32e10004a97fa21d4490a1be00b4f243ad4174e5918665d4939c4ae660213caaa27524535fc2d2e4599197ed5ce241af99ea42870374dd3196a9060b1ca9ed6e1';
+const baseUrl = 'https://cms.shuru.sa/api';
+
+const servicesData = [
   {
     ar: {
       title: "تميز التنفيذ ومكاتب إدارة المشاريع",
@@ -468,119 +471,64 @@ const sampleServices = [
   }
 ];
 
-async function seedServices() {
-  const { createStrapi, compileStrapi } = require('@strapi/strapi');
-  const appContext = await compileStrapi();
-  const app = await createStrapi(appContext).load();
-  app.log.level = 'info';
+async function pushServices() {
+  console.log('🚀 Pushing 4 core services to https://cms.shuru.sa ...');
 
-  try {
-    console.log('🚀 Starting Services Seeding Process for 4 Core Services...');
-
-    // 1. Grant public permissions for api::service.service
-    const publicRole = await strapi.query('plugin::users-permissions.role').findOne({
-      where: { type: 'public' }
-    });
-
-    if (publicRole) {
-      const actions = ['find', 'findOne'];
-      for (const action of actions) {
-        const existing = await strapi.query('plugin::users-permissions.permission').findOne({
-          where: {
-            action: `api::service.service.${action}`,
-            role: publicRole.id,
-          }
-        });
-
-        if (!existing) {
-          await strapi.query('plugin::users-permissions.permission').create({
-            data: {
-              action: `api::service.service.${action}`,
-              role: publicRole.id,
-            }
-          });
-          console.log(`Granted public permission: api::service.service.${action}`);
-        }
-      }
+  // Fetch existing remote services to check documentIds
+  const existingRes = await fetch(`${baseUrl}/services?locale=ar&populate=*&pagination[pageSize]=100`, {
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json'
     }
+  });
 
-    // 2. Insert or update services in Arabic and English
-    for (const item of sampleServices) {
-      let existingAr = await strapi.documents('api::service.service').findFirst({
-        filters: { slug: item.ar.slug },
-        locale: 'ar',
+  const existingData = await existingRes.json();
+  const remoteEntries = existingData.data || [];
+  console.log(`Found ${remoteEntries.length} existing services on remote.`);
+
+  for (const item of servicesData) {
+    const existing = remoteEntries.find((s) => s.slug === item.ar.slug);
+
+    if (existing && existing.documentId) {
+      console.log(`Updating existing Arabic service on remote: ${item.ar.title} (${existing.documentId})...`);
+      const updateArRes = await fetch(`${baseUrl}/services/${existing.documentId}?locale=ar&status=published`, {
+        method: 'PUT',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          data: {
+            title: item.ar.title,
+            slug: item.ar.slug,
+            badge: item.ar.badge,
+            shortDescription: item.ar.shortDescription,
+            icon: item.ar.icon,
+            order: item.ar.order,
+            isFeatured: item.ar.isFeatured,
+            cardCtaText: item.ar.cardCtaText,
+            features: item.ar.features,
+            seo: item.ar.seo,
+            blocks: item.ar.blocks
+          }
+        })
       });
 
-      let baseDocumentId;
-
-      if (!existingAr) {
-        const createdAr = await strapi.documents('api::service.service').create({
-          data: {
-            title: item.ar.title,
-            slug: item.ar.slug,
-            badge: item.ar.badge,
-            shortDescription: item.ar.shortDescription,
-            icon: item.ar.icon,
-            order: item.ar.order,
-            isFeatured: item.ar.isFeatured,
-            cardCtaText: item.ar.cardCtaText,
-            features: item.ar.features,
-            seo: item.ar.seo,
-            blocks: item.ar.blocks,
-          },
-          locale: 'ar',
-          status: 'published',
-        });
-
-        baseDocumentId = createdAr.documentId;
-        console.log(`✅ Created Arabic Service: ${item.ar.title} (${baseDocumentId})`);
-
-        if (baseDocumentId) {
-          await strapi.documents('api::service.service').update({
-            documentId: baseDocumentId,
-            locale: 'en',
-            data: {
-              title: item.en.title,
-              slug: item.en.slug,
-              badge: item.en.badge,
-              shortDescription: item.en.shortDescription,
-              icon: item.en.icon,
-              order: item.en.order,
-              isFeatured: item.en.isFeatured,
-              cardCtaText: item.en.cardCtaText,
-              features: item.en.features,
-              seo: item.en.seo,
-              blocks: item.en.blocks,
-            },
-            status: 'published',
-          });
-          console.log(`✅ Created English Translation for: ${item.en.title}`);
-        }
+      if (!updateArRes.ok) {
+        const err = await updateArRes.text();
+        console.error(`Failed to update Arabic service ${item.ar.slug}:`, err);
       } else {
-        baseDocumentId = existingAr.documentId;
-        // Update both to ensure latest data
-        await strapi.documents('api::service.service').update({
-          documentId: baseDocumentId,
-          locale: 'ar',
-          data: {
-            title: item.ar.title,
-            slug: item.ar.slug,
-            badge: item.ar.badge,
-            shortDescription: item.ar.shortDescription,
-            icon: item.ar.icon,
-            order: item.ar.order,
-            isFeatured: item.ar.isFeatured,
-            cardCtaText: item.ar.cardCtaText,
-            features: item.ar.features,
-            seo: item.ar.seo,
-            blocks: item.ar.blocks,
-          },
-          status: 'published',
-        });
+        console.log(`✅ Updated Arabic: ${item.ar.title}`);
+      }
 
-        await strapi.documents('api::service.service').update({
-          documentId: baseDocumentId,
-          locale: 'en',
+      console.log(`Updating English translation on remote: ${item.en.title} (${existing.documentId})...`);
+      const updateEnRes = await fetch(`${baseUrl}/services/${existing.documentId}?locale=en&status=published`, {
+        method: 'PUT',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
           data: {
             title: item.en.title,
             slug: item.en.slug,
@@ -592,21 +540,88 @@ async function seedServices() {
             cardCtaText: item.en.cardCtaText,
             features: item.en.features,
             seo: item.en.seo,
-            blocks: item.en.blocks,
+            blocks: item.en.blocks
+          }
+        })
+      });
+
+      if (!updateEnRes.ok) {
+        const err = await updateEnRes.text();
+        console.error(`Failed to update English service ${item.en.slug}:`, err);
+      } else {
+        console.log(`✅ Updated English: ${item.en.title}`);
+      }
+    } else {
+      console.log(`Creating new Arabic service on remote: ${item.ar.title}...`);
+      const createArRes = await fetch(`${baseUrl}/services?locale=ar&status=published`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          data: {
+            title: item.ar.title,
+            slug: item.ar.slug,
+            badge: item.ar.badge,
+            shortDescription: item.ar.shortDescription,
+            icon: item.ar.icon,
+            order: item.ar.order,
+            isFeatured: item.ar.isFeatured,
+            cardCtaText: item.ar.cardCtaText,
+            features: item.ar.features,
+            seo: item.ar.seo,
+            blocks: item.ar.blocks
+          }
+        })
+      });
+
+      if (!createArRes.ok) {
+        const err = await createArRes.text();
+        console.error(`Failed to create Arabic service ${item.ar.slug}:`, err);
+        continue;
+      }
+
+      const createdArData = await createArRes.json();
+      const documentId = createdArData.data?.documentId;
+      console.log(`✅ Created Arabic: ${item.ar.title} (documentId: ${documentId})`);
+
+      if (documentId) {
+        console.log(`Creating English translation on remote: ${item.en.title}...`);
+        const createEnRes = await fetch(`${baseUrl}/services/${documentId}?locale=en&status=published`, {
+          method: 'PUT',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
           },
-          status: 'published',
+          body: JSON.stringify({
+            data: {
+              title: item.en.title,
+              slug: item.en.slug,
+              badge: item.en.badge,
+              shortDescription: item.en.shortDescription,
+              icon: item.en.icon,
+              order: item.en.order,
+              isFeatured: item.en.isFeatured,
+              cardCtaText: item.en.cardCtaText,
+              features: item.en.features,
+              seo: item.en.seo,
+              blocks: item.en.blocks
+            }
+          })
         });
-        console.log(`🔄 Updated Service: ${item.ar.title} (${baseDocumentId})`);
+
+        if (!createEnRes.ok) {
+          const err = await createEnRes.text();
+          console.error(`Failed to create English translation for ${item.en.slug}:`, err);
+        } else {
+          console.log(`✅ Created English: ${item.en.title}`);
+        }
       }
     }
-
-    console.log('🎉 4 Core Services seeded and published successfully in Strapi!');
-  } catch (err) {
-    console.error('❌ Error seeding services:', err);
-  } finally {
-    await app.destroy();
-    process.exit(0);
   }
+
+  console.log('\n🎉 Finished pushing all 4 services to https://cms.shuru.sa !');
 }
 
-seedServices().catch(console.error);
+pushServices().catch(console.error);
