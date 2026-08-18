@@ -1,0 +1,99 @@
+{
+  "kind": "collectionType",
+  "collectionName": "information_requests",
+  "info": {
+    "singularName": "information-request",
+    "pluralName": "information-requests",
+    "displayName": "Information Requests (RFI)",
+    "description": "Submissions from the Request Info / RFI Page"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "fullName": {
+      "type": "string",
+      "required": true
+    },
+    "jobTitle": {
+      "type": "string",
+      "required": true
+    },
+    "organization": {
+      "type": "string",
+      "required": true
+    },
+    "department": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phone": {
+      "type": "string"
+    },
+    "cityCountry": {
+      "type": "string"
+    },
+    "entityType": {
+      "type": "string",
+      "required": true
+    },
+    "needDomain": {
+      "type": "string",
+      "required": true
+    },
+    "requestTitle": {
+      "type": "string",
+      "required": true
+    },
+    "challengeDescription": {
+      "type": "text",
+      "required": true
+    },
+    "expectedOutcomes": {
+      "type": "text"
+    },
+    "currentStage": {
+      "type": "string"
+    },
+    "expectedStartDate": {
+      "type": "string"
+    },
+    "expectedDuration": {
+      "type": "string"
+    },
+    "estimatedBudget": {
+      "type": "string"
+    },
+    "preferredContactMethod": {
+      "type": "string"
+    },
+    "bestTimeToContact": {
+      "type": "string"
+    },
+    "additionalNotes": {
+      "type": "text"
+    },
+    "rfpFileName": {
+      "type": "string"
+    },
+    "supportingDocsCount": {
+      "type": "integer",
+      "default": 0
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "new",
+        "in_review",
+        "contacted",
+        "completed",
+        "archived"
+      ],
+      "default": "new"
+    }
+  }
+}
