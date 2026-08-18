@@ -45,29 +45,25 @@ const homeArabicData = {
           title: "1. التشخيص وإعادة الهيكلة",
           description: "تقييم الجاهزية التشغيلية وسد الفجوات مع بناء الهياكل التنظيمية المرنة.",
           iconName: "Target",
-          badge: "المرحلة 01",
-          cardCtaText: "احجز جلسة مسار"
+          badge: "المرحلة 01"
         },
         {
           title: "2. تصميم استراتيجية التنفيذ",
           description: "تحويل الرؤية والأهداف الكبرى إلى خريطة طريق قابلة للتطبيق والقياس.",
           iconName: "LineChart",
-          badge: "المرحلة 02",
-          cardCtaText: "احجز جلسة مسار"
+          badge: "المرحلة 02"
         },
         {
           title: "3. التنفيذ الذكي والميداني",
           description: "إدارة المبادرات التحولية والتشغيل المباشر مع متابعة لوحات الأداء اللحظية.",
           iconName: "Cpu",
-          badge: "المرحلة 03",
-          cardCtaText: "احجز جلسة مسار"
+          badge: "المرحلة 03"
         },
         {
           title: "4. بناء القدرات والتمكين",
           description: "تطوير الكفاءات القيادية والتطوير المؤسسي لنقل المعرفة وضمان الاستدامة.",
           iconName: "Users2",
-          badge: "المرحلة 04",
-          cardCtaText: "احجز جلسة مسار"
+          badge: "المرحلة 04"
         }
       ]
     },
@@ -213,29 +209,25 @@ const homeEnglishData = {
           title: "1. Diagnosis & Restructuring",
           description: "Operational readiness assessment and bridging gaps with agile organizational structures.",
           iconName: "Target",
-          badge: "Phase 01",
-          cardCtaText: "Book Track Session"
+          badge: "Phase 01"
         },
         {
           title: "2. Execution Strategy Design",
           description: "Translating strategy into actionable and measurable roadmaps.",
           iconName: "LineChart",
-          badge: "Phase 02",
-          cardCtaText: "Book Track Session"
+          badge: "Phase 02"
         },
         {
           title: "3. Smart Field Execution",
           description: "Transformational initiative delivery with real-time performance dashboards.",
           iconName: "Cpu",
-          badge: "Phase 03",
-          cardCtaText: "Book Track Session"
+          badge: "Phase 03"
         },
         {
           title: "4. Capacity Building & Enablement",
           description: "Developing leadership capabilities and internal knowledge transfer.",
           iconName: "Users2",
-          badge: "Phase 04",
-          cardCtaText: "Book Track Session"
+          badge: "Phase 04"
         }
       ]
     },

@@ -5,11 +5,12 @@ const headerArabicData = {
   navigation: {
     primaryMenuItems: [
       { label: "الرئيسية", url: "/", onHeader: true, order: 1 },
-      { label: "الحلول", url: "/solutions", onHeader: true, order: 2 },
-      { label: "المنهجية", url: "/methodology", onHeader: true, order: 3 },
-      { label: "حالات تطبيق", url: "/case-studies", onHeader: true, order: 4 },
-      { label: "تواصل", url: "/contact", onHeader: true, order: 5 },
-      { label: "شروع", url: "/shuru", onHeader: true, order: 6 }
+      { label: "الخدمات", url: "/services", onHeader: true, order: 2 },
+      { label: "الحلول", url: "/solutions", onHeader: true, order: 3 },
+      { label: "المنهجية", url: "/methodology", onHeader: true, order: 4 },
+      { label: "حالات تطبيق", url: "/case-studies", onHeader: true, order: 5 },
+      { label: "تواصل", url: "/contact", onHeader: true, order: 6 },
+      { label: "شروع", url: "/shuru", onHeader: true, order: 7 }
     ]
   }
 };
@@ -19,11 +20,12 @@ const headerEnglishData = {
   navigation: {
     primaryMenuItems: [
       { label: "Home", url: "/", onHeader: true, order: 1 },
-      { label: "Solutions", url: "/solutions", onHeader: true, order: 2 },
-      { label: "Methodology", url: "/methodology", onHeader: true, order: 3 },
-      { label: "Case Studies", url: "/case-studies", onHeader: true, order: 4 },
-      { label: "Contact", url: "/contact", onHeader: true, order: 5 },
-      { label: "About", url: "/shuru", onHeader: true, order: 6 }
+      { label: "Services", url: "/services", onHeader: true, order: 2 },
+      { label: "Solutions", url: "/solutions", onHeader: true, order: 3 },
+      { label: "Methodology", url: "/methodology", onHeader: true, order: 4 },
+      { label: "Case Studies", url: "/case-studies", onHeader: true, order: 5 },
+      { label: "Contact", url: "/contact", onHeader: true, order: 6 },
+      { label: "About", url: "/shuru", onHeader: true, order: 7 }
     ]
   }
 };
@@ -36,6 +38,7 @@ const footerArabicData = {
       title: "روابط سريعة",
       links: [
         { label: "الرئيسية", url: "/" },
+        { label: "الخدمات", url: "/services" },
         { label: "الحلول", url: "/solutions" },
         { label: "المنهجية", url: "/methodology" },
         { label: "شروع", url: "/shuru" },
@@ -68,6 +71,7 @@ const footerEnglishData = {
       title: "Quick Links",
       links: [
         { label: "Home", url: "/" },
+        { label: "Services", url: "/services" },
         { label: "Solutions", url: "/solutions" },
         { label: "Methodology", url: "/methodology" },
         { label: "About Shuru", url: "/shuru" },
