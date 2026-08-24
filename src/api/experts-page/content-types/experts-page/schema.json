@@ -193,6 +193,16 @@
         }
       }
     },
+    "trustMetrics": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "home.metric-item",
+      "repeatable": true
+    },
     "seo": {
       "type": "component",
       "pluginOptions": {

@@ -10,6 +10,11 @@ const expertsPageData = {
     heroPrimaryCtaLink: "/request-info",
     heroSecondaryCtaText: "استعراض شبكة الخبراء",
     heroSecondaryCtaLink: "#experts-directory",
+    trustMetrics: [
+      { value: "+18", label: "سنة متوسط الخبرة الاستشارية" },
+      { value: "100%", label: "خبراء معتمدون ومرخصون" },
+      { value: "+50", label: "برنامج تحولي ومكتب PMO مُدار" }
+    ],
     deliveryModelBadge: "نموذج العمل المتدرج",
     deliveryModelTitle: "نموذج تقديم الاستشارات متعدد المستويات (4-Tier Model)",
     deliveryModelSubtitle: "هيكل تشغيلي منظم يضمن الإشراف الاستراتيجي رفيع المستوى، والقيادة الميدانية، والعمق التخصصي، مع التركيز على بناء واستدامة القدرات الداخلية لمنظمتكم.",
@@ -83,6 +88,11 @@ const expertsPageData = {
     heroPrimaryCtaLink: "/request-info",
     heroSecondaryCtaText: "Explore Expert Directory",
     heroSecondaryCtaLink: "#experts-directory",
+    trustMetrics: [
+      { value: "+18", label: "Years Avg. Advisory Experience" },
+      { value: "100%", label: "Certified & Licensed Experts" },
+      { value: "+50", label: "Transformations & PMOs Delivered" }
+    ],
     deliveryModelBadge: "4-Tier Delivery Model",
     deliveryModelTitle: "Structured 4-Tier Engagement Model",
     deliveryModelSubtitle: "A proven organizational framework ensuring strategic oversight, operational drive, deep technical specialization, and internal capability enablement.",

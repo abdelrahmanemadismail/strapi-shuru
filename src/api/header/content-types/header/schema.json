@@ -60,6 +60,15 @@
           "localized": true
         }
       }
+    },
+    "showQuickLinks": {
+      "type": "boolean",
+      "default": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
