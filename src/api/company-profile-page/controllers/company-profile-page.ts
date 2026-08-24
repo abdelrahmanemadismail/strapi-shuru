@@ -1,0 +1,7 @@
+/**
+ * company-profile-page controller
+ */
+
+import { factories } from '@strapi/strapi';
+
+export default factories.createCoreController('api::company-profile-page.company-profile-page' as any);
