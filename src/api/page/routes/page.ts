@@ -1,20 +1,3 @@
-export default {
-  routes: [
-    {
-      method: "GET",
-      path: "/pages",
-      handler: "page.find",
-      config: {
-        auth: false,
-      },
-    },
-    {
-      method: "GET",
-      path: "/pages/slug/:slug",
-      handler: "page.findOneBySlug",
-      config: {
-        auth: false,
-      },
-    }
-  ]
-};
+import { factories } from '@strapi/strapi';
+
+export default factories.createCoreRouter('api::page.page' as any);

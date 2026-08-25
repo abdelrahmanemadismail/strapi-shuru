@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_services_sections",
+  "info": {
+    "displayName": "Services Section",
+    "description": "Services grid and showcase section"
+  },
+  "options": {},
+  "attributes": {
+    "badge": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "introText": {
+      "type": "text"
+    }
+  }
+}
