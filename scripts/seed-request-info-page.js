@@ -18,6 +18,47 @@ const requestInfoPageData = {
     workflowStep3Title: "نتواصل معكم",
     workflowStep3Desc: "نتواصل لتأكيد النطاق والخطوات التالية ونموذج التعاون.",
     consentText: "أوافق على استخدام المعلومات المقدمة لغرض مراجعة الطلب والتواصل معي، وفق سياسة الخصوصية.",
+    entityTypeOptions: [
+      "جهة حكومية",
+      "شركة خاصة",
+      "جهة غير ربحية",
+      "شركة ناشئة",
+      "أخرى"
+    ],
+    needDomainOptions: [
+      "تأسيس أو تطوير PMO",
+      "تقييم النضج المؤسسي",
+      "الحوكمة ونماذج التشغيل",
+      "إدارة المعرفة",
+      "الذكاء الاصطناعي والتحول الرقمي",
+      "إدارة المنافع والقيمة",
+      "إدارة المحافظ والبرامج والمشاريع",
+      "الدراسات والأبحاث التنفيذية",
+      "توفير خبراء واستشاريين",
+      "طلب تواصل",
+      "أخرى"
+    ],
+    currentStageOptions: [
+      "استكشاف أولي",
+      "إعداد نطاق العمل",
+      "إعداد مقترح",
+      "تقييم عروض",
+      "مشروع قائم يحتاج دعمًا",
+      "أخرى"
+    ],
+    estimatedBudgetOptions: [
+      "لم تحدد بعد",
+      "أقل من 100 ألف ريال",
+      "100–250 ألف ريال",
+      "250–500 ألف ريال",
+      "500 ألف–1 مليون ريال",
+      "أكثر من مليون ريال"
+    ],
+    preferredContactMethodOptions: [
+      "البريد الإلكتروني",
+      "اتصال هاتفي",
+      "اجتماع افتراضي"
+    ],
     seo: {
       meta_title: "طلب معلومات واستشارات تنفيذية (RFI) | شروع",
       meta_description: "قدم طلب معلومات واستشارات لتحديد نطاق العمل ونخبة الخبراء المناسبين لمشروعكم.",
@@ -41,6 +82,47 @@ const requestInfoPageData = {
     workflowStep3Title: "Connecting with You",
     workflowStep3Desc: "We connect to align on scope, roadmap, next operational steps, and engagement model.",
     consentText: "I agree to the processing of the submitted information to review the request and contact me, in accordance with the Privacy Policy.",
+    entityTypeOptions: [
+      "Government Entity",
+      "Private Enterprise",
+      "Non-Profit Organization",
+      "Startup",
+      "Other"
+    ],
+    needDomainOptions: [
+      "PMO Setup & Enhancement",
+      "Institutional Maturity Assessment",
+      "Governance & Operating Models",
+      "Knowledge Management",
+      "AI & Digital Transformation",
+      "Benefits & Value Management",
+      "Portfolio, Program & Project Management",
+      "Executive Studies & Research",
+      "Expert & Consultant Provision",
+      "Contact Request",
+      "Other"
+    ],
+    currentStageOptions: [
+      "Initial Discovery",
+      "Scope of Work Preparation",
+      "Proposal Preparation",
+      "Bid Evaluation",
+      "Existing Project Needing Support",
+      "Other"
+    ],
+    estimatedBudgetOptions: [
+      "Not determined yet",
+      "Under 100k SAR",
+      "100k–250k SAR",
+      "250k–500k SAR",
+      "500k–1M SAR",
+      "More than 1M SAR"
+    ],
+    preferredContactMethodOptions: [
+      "Email",
+      "Phone Call",
+      "Virtual Meeting"
+    ],
     seo: {
       meta_title: "Request for Information & Executive Advisory (RFI) | Shuru",
       meta_description: "Submit a request for information to define project scope and align with top executive advisors.",
