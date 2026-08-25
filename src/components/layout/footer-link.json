@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_layout_footer_links",
+  "info": {
+    "displayName": "Footer Link",
+    "icon": "link",
+    "description": "A link in footer columns or bottom links"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true,
+      "maxLength": 50
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "openInNewTab": {
+      "type": "boolean",
+      "default": false
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "onFooter": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

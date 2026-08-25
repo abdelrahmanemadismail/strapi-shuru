@@ -63,7 +63,7 @@
           "localized": true
         }
       },
-      "component": "layout.navigation-item"
+      "component": "layout.footer-link"
     }
   }
 }

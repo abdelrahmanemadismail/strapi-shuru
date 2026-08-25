@@ -14,7 +14,7 @@
     "links": {
       "type": "component",
       "repeatable": true,
-      "component": "layout.navigation-item"
+      "component": "layout.footer-link"
     }
   }
 }

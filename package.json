@@ -14,6 +14,7 @@
     "seed:home": "node ./scripts/seed-shuru.js",
     "seed:pages": "node ./scripts/seed-pages.js",
     "seed:header-footer": "node ./scripts/seed-header-footer.js",
+    "seed:footer": "node ./scripts/seed-footer-links.js",
     "seed:fix-thumbnails": "node ./scripts/fix-thumbnails.js",
     "seed:all": "npm run seed:home && npm run seed:pages && npm run seed:header-footer",
     "seed:sync": "node ./scripts/sync-data.js",
