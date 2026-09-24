@@ -1,11 +1,11 @@
 {
   "kind": "collectionType",
-  "collectionName": "consultations",
+  "collectionName": "contact_submissions",
   "info": {
-    "singularName": "consultation",
-    "pluralName": "consultations",
-    "displayName": "Consultation",
-    "description": "Consultation request form submissions"
+    "singularName": "contact-submission",
+    "pluralName": "contact-submissions",
+    "displayName": "Contact Submissions",
+    "description": "Form submissions from the Contact Us / Diagnostic Session page"
   },
   "options": {
     "draftAndPublish": false
@@ -16,33 +16,34 @@
       "required": true
     },
     "email": {
-      "type": "string",
+      "type": "email",
       "required": true
     },
     "phone": {
       "type": "string",
-      "required": false
+      "required": true
     },
     "company": {
       "type": "string",
-      "required": false
-    },
-    "preferredDateTime": {
-      "type": "datetime",
-      "required": false
-    },
-    "message": {
-      "type": "text",
-      "required": false
+      "required": true
     },
     "entityType": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "desiredService": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "challenge": {
+      "type": "string",
+      "required": true
+    },
+    "preferredDate": {
       "type": "string"
+    },
+    "message": {
+      "type": "text"
     },
     "status": {
       "type": "enumeration",
